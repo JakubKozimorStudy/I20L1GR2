@@ -6,11 +6,16 @@ import javafx.fxml.FXML;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class LoginController {
+public class MenuPageController {
 
     @FXML
-    void loginButton(ActionEvent event) {
-        SceneManager.renderScene("menuPage");
+    void logoutButton(ActionEvent event) {
+        SceneManager.renderScene("loginPage");
+    }
+
+    @FXML
+    void adminPageButton(ActionEvent actionEvent) {
+        SceneManager.renderScene("listOfUsers");
     }
 
     @FXML

@@ -31,7 +31,9 @@ public class RestaurantApplication extends Application {
         SceneManager.setStage(primaryStage);
         SceneManager.addScene("listOfUsers", "fxml/list-of-users.fxml");
         SceneManager.addScene("addUser", "fxml/add-users.fxml");
-        SceneManager.renderScene("listOfUsers");
+        SceneManager.addScene("loginPage","fxml/login-panel.fxml");
+        SceneManager.addScene("menuPage","fxml/menu-page.fxml");
+        SceneManager.renderScene("loginPage");
     }
 
     @Override
