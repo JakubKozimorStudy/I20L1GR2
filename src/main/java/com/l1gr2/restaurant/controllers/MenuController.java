@@ -4,9 +4,10 @@ import javafx.fxml.FXML;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class FirstPageController {
+public class MenuController {
+
 
     @FXML
-    private void initialize() {
+    void initialize() {
     }
 }
