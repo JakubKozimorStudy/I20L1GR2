@@ -28,7 +28,7 @@ public class RestaurantApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        fxmlLoader.setLocation(getClass().getResource("/fxml/add-users.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("/fxml/list-of-users.fxml"));
         rootNode = fxmlLoader.load();
 
         primaryStage.setTitle("Restauracja");
