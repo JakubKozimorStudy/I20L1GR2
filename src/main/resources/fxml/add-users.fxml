@@ -52,7 +52,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="620.0" layoutY="540.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="150.0" text="Wróć">
+      <Button layoutX="620.0" layoutY="540.0" mnemonicParsing="false" onAction="#backToUserListButton" prefHeight="39.0" prefWidth="150.0" text="Wróć">
          <font>
             <Font size="18.0" />
          </font>
