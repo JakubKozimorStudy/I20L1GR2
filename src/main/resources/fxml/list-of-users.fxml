@@ -14,7 +14,7 @@
             <TableColumn prefWidth="125.0" text="Rola" />
         </columns>
       </TableView>
-      <Button layoutX="593.0" layoutY="81.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="190.0" text="Dodaj użytkownika">
+      <Button layoutX="593.0" layoutY="81.0" mnemonicParsing="false" onAction="#addUserButton" prefHeight="39.0" prefWidth="190.0" text="Dodaj użytkownika">
          <font>
             <Font size="18.0" />
          </font>
@@ -24,7 +24,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="593.0" layoutY="193.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="190.0" text="Edutuj użytkownika">
+      <Button layoutX="593.0" layoutY="193.0" mnemonicParsing="false" onAction="#editUserButton" prefHeight="39.0" prefWidth="190.0" text="Edutuj użytkownika">
          <font>
             <Font size="18.0" />
          </font>

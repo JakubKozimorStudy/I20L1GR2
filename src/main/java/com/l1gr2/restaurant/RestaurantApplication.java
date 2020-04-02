@@ -28,14 +28,10 @@ public class RestaurantApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        fxmlLoader.setLocation(getClass().getResource("/fxml/main-page.fxml"));
-        rootNode = fxmlLoader.load();
-
-        primaryStage.setTitle("Restauracja");
-        Scene scene = new Scene(rootNode, 800, 600);
-        primaryStage.setResizable(false);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        SceneManager.setStage(primaryStage);
+        SceneManager.addScene("listOfUsers", "fxml/list-of-users.fxml");
+        SceneManager.addScene("addUser", "fxml/add-users.fxml");
+        SceneManager.renderScene("listOfUsers");
     }
 
     @Override
