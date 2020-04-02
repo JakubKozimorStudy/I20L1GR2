@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.l1gr2.restaurant.controllers.AddUsersController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="225.0" layoutY="14.0" text="Dodaj nowego użytkownika" textAlignment="CENTER" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="180.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="383.0" layoutY="74.0" text="Imie" AnchorPane.bottomAnchor="499.0" AnchorPane.leftAnchor="383.0" AnchorPane.rightAnchor="382.0" AnchorPane.topAnchor="74.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="362.0" layoutY="144.0" text="Nazwisko" AnchorPane.bottomAnchor="429.0" AnchorPane.leftAnchor="362.0" AnchorPane.rightAnchor="362.0" AnchorPane.topAnchor="144.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="378.0" layoutY="216.0" text="Login" AnchorPane.bottomAnchor="357.0" AnchorPane.leftAnchor="378.0" AnchorPane.rightAnchor="377.0" AnchorPane.topAnchor="216.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="374.0" layoutY="287.0" prefHeight="27.0" prefWidth="52.0" text="Hasło" AnchorPane.bottomAnchor="286.0" AnchorPane.leftAnchor="374.0" AnchorPane.rightAnchor="374.0" AnchorPane.topAnchor="287.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="341.0" layoutY="362.0" prefHeight="27.0" prefWidth="119.0" text="Powtórz hasło" AnchorPane.bottomAnchor="211.0" AnchorPane.leftAnchor="341.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="362.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="383.0" layoutY="433.0" prefHeight="27.0" prefWidth="35.0" text="Rola" AnchorPane.leftAnchor="383.0" AnchorPane.rightAnchor="382.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="firstName" layoutX="299.0" layoutY="107.0" prefHeight="25.0" prefWidth="203.0" AnchorPane.bottomAnchor="468.0" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="298.0" AnchorPane.topAnchor="107.0" />
+      <TextField fx:id="lastName" layoutX="299.0" layoutY="180.0" prefHeight="25.0" prefWidth="203.0" AnchorPane.bottomAnchor="395.0" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="298.0" AnchorPane.topAnchor="180.0" />
+      <TextField fx:id="login" layoutX="299.0" layoutY="251.0" prefHeight="25.0" prefWidth="203.0" AnchorPane.bottomAnchor="324.0" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="298.0" AnchorPane.topAnchor="251.0" />
+      <PasswordField fx:id="password" layoutX="299.0" layoutY="323.0" prefHeight="25.0" prefWidth="203.0" AnchorPane.bottomAnchor="252.0" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="298.0" AnchorPane.topAnchor="323.0" />
+      <PasswordField fx:id="repeatedPassword" layoutX="299.0" layoutY="397.0" prefHeight="25.0" prefWidth="203.0" AnchorPane.bottomAnchor="178.0" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="298.0" AnchorPane.topAnchor="397.0" />
+      <ComboBox fx:id="roleComboBox" layoutX="299.0" layoutY="467.0" prefHeight="25.0" prefWidth="203.0" AnchorPane.bottomAnchor="108.0" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="298.0" AnchorPane.topAnchor="467.0" />
+      <Button layoutX="299.0" layoutY="540.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="203.0" text="Dodaj" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="298.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="620.0" layoutY="540.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="150.0" text="Wróć">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
