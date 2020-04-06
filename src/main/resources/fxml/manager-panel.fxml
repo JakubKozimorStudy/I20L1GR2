@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.l1gr2.restaurant.controllers.ManagerPanelController">
+   <children>
+      <Text layoutX="102.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raporty" textAlignment="CENTER" wrappingWidth="178.13671875">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font></Text>
+      <TableView layoutX="51.0" layoutY="73.0" prefHeight="200.0" prefWidth="302.0">
+        <columns>
+          <TableColumn prefWidth="220.0" text="Raport" />
+          <TableColumn prefWidth="81.0" text="Data" />
+        </columns>
+      </TableView>
+      <Button layoutX="51.0" layoutY="296.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="154.0" text="Wygeneruj raport" />
+      <Text layoutX="548.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produkty">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Text>
+      <TableView layoutX="412.0" layoutY="73.0" prefHeight="200.0" prefWidth="345.0">
+        <columns>
+          <TableColumn prefWidth="266.0" text="Produkt" />
+          <TableColumn prefWidth="78.0" text="Ilość" />
+        </columns>
+      </TableView>
+      <Button layoutX="706.0" layoutY="300.0" mnemonicParsing="false" text="Dodaj" />
+      <TextField layoutX="416.0" layoutY="300.0" prefHeight="25.0" prefWidth="178.0" promptText="Produkt" />
+      <TextField layoutX="613.0" layoutY="300.0" prefHeight="25.0" prefWidth="72.0" promptText="Ilość" />
+      <Button layoutX="659.0" layoutY="528.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="41.0" prefWidth="109.0" text="Wyloguj" />
+      <Button layoutX="65.0" layoutY="528.0" mnemonicParsing="false" onAction="#ListOfKelnersButton" prefHeight="41.0" prefWidth="163.0" text="Zarządzanie kelnerami" />
+   </children>
+</AnchorPane>
