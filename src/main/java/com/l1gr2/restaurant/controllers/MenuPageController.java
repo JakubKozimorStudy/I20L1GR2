@@ -19,6 +19,16 @@ public class MenuPageController {
     }
 
     @FXML
+    void menagerPageButton(ActionEvent actionEvent) {
+        SceneManager.renderScene("ManagerPanel");
+    }
+
+    @FXML
+    void chefPageButton(ActionEvent actionEvent) {
+        SceneManager.renderScene("chefPanel");
+    }
+
+    @FXML
     void initialize() {
     }
 }

@@ -34,6 +34,7 @@ public class RestaurantApplication extends Application {
         SceneManager.addScene("loginPage","fxml/login-panel.fxml");
         SceneManager.addScene("menuPage","fxml/menu-page.fxml");
         SceneManager.addScene("ManagerPanel", "fxml/manager-panel.fxml");
+        SceneManager.addScene("chefPanel", "fxml/chef-panel.fxml");
         SceneManager.renderScene("loginPage");
     }
 
