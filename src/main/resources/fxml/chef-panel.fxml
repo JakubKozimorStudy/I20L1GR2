@@ -13,29 +13,28 @@
    <children>
       <TableView fx:id="tbl_used_products" layoutX="51.0" layoutY="312.0" prefHeight="201.0" prefWidth="300.0">
         <columns>
-          <TableColumn fx:id="column_product" prefWidth="217.0" text="Produkt" />
-          <TableColumn fx:id="column_count" prefWidth="81.0" text="Ilość" />
+          <TableColumn fx:id="column_product" prefWidth="222.0" text="Produkt" />
+          <TableColumn fx:id="column_count" prefWidth="76.0" text="Ilość" />
         </columns>
       </TableView>
-      <TableView fx:id="tbl_products" layoutX="400.0" layoutY="72.0" prefHeight="230.0" prefWidth="300.0">
+      <TableView fx:id="tbl_products" layoutX="442.0" layoutY="72.0" prefHeight="230.0" prefWidth="300.0">
          <columns>
-            <TableColumn fx:id="column_product" prefWidth="217.0" text="Produkt" />
-            <TableColumn fx:id="column_count" prefWidth="82.0" text="Ilość" />
+            <TableColumn fx:id="column_product" prefWidth="221.0" text="Produkt" />
+            <TableColumn fx:id="column_count" prefWidth="78.0" text="Ilość" />
          </columns>
       </TableView>
-      <Text fill="#111111" layoutX="400.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Szukaj">
+      <Text fill="#111111" layoutX="442.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Szukaj">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="text_product" layoutX="476.0" layoutY="34.0" prefHeight="25.0" prefWidth="108.0" />
-      <Text fill="#111111" layoutX="88.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aktualne zamówienia">
+      <TextField fx:id="text_product" layoutX="513.0" layoutY="33.0" prefHeight="25.0" prefWidth="108.0" />
+      <Text fill="#111111" layoutX="88.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aktualne zamówienia">
          <font>
             <Font name="System Bold Italic" size="22.0" />
          </font>
       </Text>
-      <ChoiceBox fx:id="choice_orders" layoutX="88.0" layoutY="81.0" prefHeight="25.0" prefWidth="225.0" />
-      <ChoiceBox fx:id="choice_products" layoutX="467.0" layoutY="313.0" prefHeight="25.0" prefWidth="61.0" />
+      <ChoiceBox fx:id="choice_products" layoutX="503.0" layoutY="311.0" prefHeight="25.0" prefWidth="61.0" />
       <Button fx:id="btn_delete" layoutX="201.0" layoutY="529.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Usuń" />
       <Button fx:id="btn_clear" layoutX="113.0" layoutY="529.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Wyczyść" />
       <Button fx:id="btn_confirm_order" layoutX="609.0" layoutY="521.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" text="Potwierdz zamówienie">
@@ -43,12 +42,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btn_delete_order" layoutX="442.0" layoutY="521.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" text="Usuń zamówienie">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Text fill="#111111" layoutX="405.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj">
+      <Text fill="#111111" layoutX="442.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dodaj">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
@@ -58,5 +52,14 @@
             <Font name="System Bold Italic" size="22.0" />
          </font>
       </Text>
+      <TableView fx:id="tbl_dishes" layoutX="43.0" layoutY="72.0" prefHeight="138.0" prefWidth="350.0">
+         <columns>
+            <TableColumn fx:id="column_dish" prefWidth="199.0" text="Danie" />
+            <TableColumn fx:id="column_count" prefWidth="59.0" text="Ilość" />
+            <TableColumn fx:id="column_status" prefWidth="91.0" text="Status" />
+         </columns>
+      </TableView>
+      <Button fx:id="btn_status" layoutX="218.0" layoutY="223.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Zmień status" />
+      <ChoiceBox fx:id="choice_status" layoutX="99.0" layoutY="223.0" prefHeight="25.0" prefWidth="108.0" />
    </children>
 </AnchorPane>
