@@ -26,5 +26,10 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <Button layoutX="286.0" layoutY="289.0" mnemonicParsing="false" onAction="#waiterPageButton" prefHeight="39.0" prefWidth="190.0" text="Strona kelnera">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

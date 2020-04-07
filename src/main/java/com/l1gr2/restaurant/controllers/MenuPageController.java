@@ -29,6 +29,9 @@ public class MenuPageController {
     }
 
     @FXML
+    void waiterPageButton (ActionEvent actionEvent) { SceneManager.renderScene("tables-page");}
+
+    @FXML
     void initialize() {
     }
 }
