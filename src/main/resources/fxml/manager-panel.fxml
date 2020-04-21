@@ -6,32 +6,50 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.l1gr2.restaurant.controllers.ManagerPanelController">
    <children>
-      <Text layoutX="102.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raporty" textAlignment="CENTER" wrappingWidth="178.13671875">
+      <Text layoutX="104.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raporty" textAlignment="CENTER" wrappingWidth="178.13671875">
          <font>
             <Font name="System Bold Italic" size="22.0" />
          </font></Text>
-      <TableView layoutX="51.0" layoutY="73.0" prefHeight="200.0" prefWidth="302.0">
+      <TableView layoutX="51.0" layoutY="60.0" prefHeight="200.0" prefWidth="302.0">
         <columns>
           <TableColumn prefWidth="220.0" text="Raport" />
           <TableColumn prefWidth="81.0" text="Data" />
         </columns>
       </TableView>
-      <Button layoutX="51.0" layoutY="296.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="154.0" text="Wygeneruj raport" />
-      <Text layoutX="548.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produkty">
+      <Button layoutX="51.0" layoutY="274.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="154.0" text="Wygeneruj raport" />
+      <Text layoutX="547.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produkty">
          <font>
             <Font name="System Bold Italic" size="22.0" />
          </font>
       </Text>
-      <TableView layoutX="412.0" layoutY="73.0" prefHeight="200.0" prefWidth="345.0">
+      <TableView layoutX="416.0" layoutY="60.0" prefHeight="200.0" prefWidth="345.0">
         <columns>
-          <TableColumn prefWidth="266.0" text="Produkt" />
-          <TableColumn prefWidth="78.0" text="Ilość" />
+          <TableColumn prefWidth="196.0" text="Produkt" />
+          <TableColumn prefWidth="86.0" text="Ilość" />
+            <TableColumn prefWidth="75.0" text="Jedn." />
         </columns>
       </TableView>
-      <Button layoutX="706.0" layoutY="300.0" mnemonicParsing="false" text="Dodaj" />
-      <TextField layoutX="416.0" layoutY="300.0" prefHeight="25.0" prefWidth="178.0" promptText="Produkt" />
-      <TextField layoutX="613.0" layoutY="300.0" prefHeight="25.0" prefWidth="72.0" promptText="Ilość" />
-      <Button layoutX="659.0" layoutY="528.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="41.0" prefWidth="109.0" text="Wyloguj" />
-      <Button layoutX="65.0" layoutY="528.0" mnemonicParsing="false" onAction="#ListOfKelnersButton" prefHeight="41.0" prefWidth="163.0" text="Zarządzanie kelnerami" />
+      <Button layoutX="705.0" layoutY="274.0" mnemonicParsing="false" text="Dodaj" />
+      <TextField layoutX="416.0" layoutY="274.0" prefHeight="25.0" prefWidth="142.0" promptText="Produkt" />
+      <TextField layoutX="569.0" layoutY="274.0" prefHeight="25.0" prefWidth="72.0" promptText="Ilość" />
+      <Button layoutX="626.0" layoutY="528.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="41.0" prefWidth="142.0" text="Wyloguj" />
+      <Button layoutX="625.0" layoutY="470.0" mnemonicParsing="false" onAction="#ListOfKelnersButton" prefHeight="41.0" prefWidth="142.0" text="Zarządzanie kelnerami" />
+      <TableView layoutX="51.0" layoutY="353.0" prefHeight="174.0" prefWidth="406.0">
+        <columns>
+          <TableColumn prefWidth="84.0" text="Nazwa" />
+          <TableColumn prefWidth="271.0" text="Produkty" />
+            <TableColumn prefWidth="50.0" text="Cena" />
+        </columns>
+      </TableView>
+      <Button layoutX="470.0" layoutY="549.0" mnemonicParsing="false" text="Dodaj" />
+      <TextField layoutX="51.0" layoutY="549.0" prefHeight="25.0" prefWidth="80.0" promptText="Nazwa" />
+      <TextField layoutX="144.0" layoutY="549.0" prefHeight="25.0" prefWidth="255.0" promptText="Produkty" />
+      <TextField layoutX="409.0" layoutY="549.0" prefHeight="25.0" prefWidth="48.0" promptText="Cena" />
+      <Text layoutX="223.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dania" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Text>
+      <TextField layoutX="648.0" layoutY="274.0" prefHeight="25.0" prefWidth="48.0" promptText="jedn." />
    </children>
 </AnchorPane>
