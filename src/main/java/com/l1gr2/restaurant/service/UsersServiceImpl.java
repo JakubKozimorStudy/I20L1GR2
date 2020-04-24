@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsersServiceImpl implements UsersService {
@@ -28,5 +29,15 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public void deleteUser(Users selectedItem) {
         usersRepository.delete(selectedItem);
+    }
+
+    @Override
+    public void addUser(Users user) {
+        usersRepository.save(user);
+    }
+
+    @Override
+    public boolean checkUniqueness(String login) {
+        return usersRepository.findById(login).isPresent();
     }
 }

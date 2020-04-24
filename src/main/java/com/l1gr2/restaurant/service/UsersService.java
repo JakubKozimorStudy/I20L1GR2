@@ -9,4 +9,8 @@ public interface UsersService {
     List<Users> getAllUsers();
 
     void deleteUser(Users selectedItem);
+
+    void addUser(Users user);
+
+    boolean checkUniqueness(String login);
 }
