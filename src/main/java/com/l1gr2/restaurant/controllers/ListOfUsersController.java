@@ -60,6 +60,19 @@ public class ListOfUsersController{
         return this.observableListAllUsers;
     }
 
+    @FXML
+    void deleteUser(ActionEvent event) {
+        Users selectedItem = tableViewListOfUsers.getSelectionModel().getSelectedItem();
+        usersService.deleteUser(selectedItem);
+        refreshTable();
+    }
+
+    private void refreshTable() {
+        this.observableListAllUsers = FXCollections.observableArrayList();
+        tableViewListOfUsers.getColumns().clear();
+        tableViewListOfUsers.setItems(getObservableListAllUsers());
+        tableViewListOfUsers.getColumns().addAll(textFieldFirstName, textFieldLastName, textFieldLogin, textFieldRole);
+    }
 
     @FXML
     void initialize() {
