@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.l1gr2.restaurant.controllers.ListOfUsersController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.l1gr2.restaurant.controllers.ListOfUsersController">
    <children>
-      <TableView layoutX="14.0" layoutY="14.0" prefHeight="570.0" prefWidth="553.0">
+      <TableView fx:id="tableViewListOfUsers" layoutX="14.0" layoutY="14.0" prefHeight="570.0" prefWidth="553.0">
         <columns>
-          <TableColumn prefWidth="117.0" text="Imię" />
-          <TableColumn minWidth="0.0" prefWidth="179.0" text="Nazwisko" />
-            <TableColumn prefWidth="130.0" text="Login" />
-            <TableColumn prefWidth="125.0" text="Rola" />
+          <TableColumn fx:id="textFieldFirstName" prefWidth="117.0" text="Imię" />
+          <TableColumn fx:id="textFieldLastName" minWidth="0.0" prefWidth="179.0" text="Nazwisko" />
+            <TableColumn fx:id="textFieldLogin" prefWidth="130.0" text="Login" />
+            <TableColumn fx:id="textFieldRole" prefWidth="125.0" text="Rola" />
         </columns>
       </TableView>
       <Button layoutX="593.0" layoutY="81.0" mnemonicParsing="false" onAction="#addUserButton" prefHeight="39.0" prefWidth="190.0" text="Dodaj użytkownika">
@@ -19,7 +21,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="593.0" layoutY="139.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="190.0" text="Usuń użytkownika">
+      <Button layoutX="593.0" layoutY="139.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="39.0" prefWidth="190.0" text="Usuń użytkownika">
          <font>
             <Font size="18.0" />
          </font>

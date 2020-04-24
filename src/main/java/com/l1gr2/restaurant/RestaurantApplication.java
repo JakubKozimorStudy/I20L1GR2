@@ -11,8 +11,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class RestaurantApplication extends Application {
-    private ConfigurableApplicationContext springContext;
-    private Parent rootNode;
+    private static ConfigurableApplicationContext springContext;
     private FXMLLoader fxmlLoader;
 
     public static void main(String[] args) {
@@ -24,6 +23,10 @@ public class RestaurantApplication extends Application {
         springContext = SpringApplication.run(RestaurantApplication.class);
         fxmlLoader = new FXMLLoader();
         fxmlLoader.setControllerFactory(springContext::getBean);
+    }
+
+    public static ConfigurableApplicationContext getSpringContext() {
+        return springContext;
     }
 
     @Override
