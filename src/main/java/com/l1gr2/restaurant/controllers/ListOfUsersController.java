@@ -49,11 +49,6 @@ public class ListOfUsersController{
         SceneManager.renderScene("addUser");
     }
 
-    @FXML
-    void editUserButton(ActionEvent event) {
-        SceneManager.renderScene("addUser");
-    }
-
     public ObservableList<Users> getObservableListAllUsers() {
         List<Users> usersList = usersService.getAllUsers();
         this.observableListAllUsers.addAll(usersList);
