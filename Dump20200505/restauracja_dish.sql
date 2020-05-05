@@ -27,7 +27,7 @@ CREATE TABLE `dish` (
   `dish_name` varchar(255) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
   `descripion` varchar(255) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
   `dish_price` int NOT NULL,
-  `category` varchar(255) COLLATE utf16_polish_ci DEFAULT NULL,
+  `category` varchar(255) CHARACTER SET utf16 COLLATE utf16_polish_ci DEFAULT NULL,
   PRIMARY KEY (`dish_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf16 COLLATE=utf16_polish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-05 22:46:04
+-- Dump completed on 2020-05-05 23:37:47
