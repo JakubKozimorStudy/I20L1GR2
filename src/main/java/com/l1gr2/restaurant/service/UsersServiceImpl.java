@@ -1,18 +1,19 @@
 package com.l1gr2.restaurant.service;
 
-import com.l1gr2.restaurant.RestaurantApplication;
+
 import com.l1gr2.restaurant.entity.Users;
 import com.l1gr2.restaurant.repository.UsersRepository;
+import org.apache.tomcat.jni.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
 @Service
 public class UsersServiceImpl implements UsersService {
+
 
     UsersRepository usersRepository;
 
@@ -34,6 +35,19 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public void addUser(Users user) {
         usersRepository.save(user);
+    }
+
+    @Override
+    public String findUserAndGetRole(String login, String password) {
+        String role ="";
+        Optional<Users> userFromDatabase = usersRepository.findById(login);
+        if(userFromDatabase.isPresent()){
+            Users userToCheck = userFromDatabase.get();
+            if(userToCheck.getPassword().equals(password)){
+                role = userToCheck.getRole();
+            }
+        }
+        return role;
     }
 
     @Override

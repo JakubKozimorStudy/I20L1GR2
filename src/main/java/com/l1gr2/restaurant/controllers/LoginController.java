@@ -1,16 +1,26 @@
 package com.l1gr2.restaurant.controllers;
 
+import com.l1gr2.restaurant.RestaurantApplication;
 import com.l1gr2.restaurant.SceneManager;
+
+import com.l1gr2.restaurant.entity.Users;
+import com.l1gr2.restaurant.service.UsersService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
+import javafx.collections.ObservableList;
+
+import java.util.List;
+
 @Controller
 public class LoginController {
+
+    UsersService usersService;
 
     @FXML
     private TextField textfield_login_name;
@@ -20,15 +30,33 @@ public class LoginController {
     @FXML
     private PasswordField text_field_password;
     @FXML
+
     void loginButton(ActionEvent event) {
-        String nick="admin";
-        String password="admin";
+        String nick = textfield_login_name.getText();
+        String password = text_field_password.getText();
+
+        String role = usersService.findUserAndGetRole(nick, password);
+
+
+
+
 
         String nick_user=textfield_login_name.getText(); //przypisanie z textfielda nick'u wprowadzonego przez usera
         String passwrod_user=text_field_password.getText(); //przypisanie z textfielda hasła wprowadzonego przez usera
         if(nick.equals(nick_user) && password.equals(passwrod_user))
             {
-                SceneManager.renderScene("menuPage");
+                if(role.equals("Kelner")){
+                    SceneManager.renderScene("tables-page");
+                }
+                if(role.equals("Administrator")){
+                    SceneManager.renderScene("listOfUsers");
+                }
+                if(role.equals("Menadżer")){
+                    SceneManager.renderScene("ManagerPanel");
+                }
+                if(role.equals("Kucharz")){
+                    SceneManager.renderScene("chefPanel");
+                }
             }
         else
             {
@@ -45,5 +73,7 @@ public class LoginController {
 
     @FXML
     void initialize() {
+        ConfigurableApplicationContext springContext = RestaurantApplication.getSpringContext();
+        usersService = (UsersService) springContext.getBean("usersServiceImpl");
     }
 }
