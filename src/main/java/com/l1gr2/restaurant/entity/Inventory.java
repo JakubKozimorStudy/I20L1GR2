@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class Inventory {
 
     @Id
-    @Column(name = "product_id")
+    @Column(name = "product_Id")
     private int product_id;
 
     @Column(name = "product_name")

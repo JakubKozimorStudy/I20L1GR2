@@ -170,8 +170,8 @@ public class ChefPanelController {
         observableListUsedProducts.addAll(used_products);
 
 
-        column_used_product.setCellValueFactory(new PropertyValueFactory<>("name"));                //show data in table used products
-        column_used_count.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        column_used_product.setCellValueFactory(new PropertyValueFactory<>("product_name"));                //show data in table used products
+        column_used_count.setCellValueFactory(new PropertyValueFactory<>("product_quantity"));
         tbl_used_products.setItems(observableListUsedProducts);
         tbl_used_products.getColumns().clear();
         tbl_used_products.getColumns().addAll(column_used_product, column_used_count);
@@ -185,8 +185,8 @@ public class ChefPanelController {
         observableListSearchedProducts.clear();
         observableListSearchedProducts.addAll(searched_list);
 
-        column_product.setCellValueFactory(new PropertyValueFactory<>("name"));                //show data in table used products
-        column_count.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        column_product.setCellValueFactory(new PropertyValueFactory<>("product_name"));                //show data in table used products
+        column_count.setCellValueFactory(new PropertyValueFactory<>("product_quantity"));
         tbl_products.setItems(observableListSearchedProducts);
         tbl_products.getColumns().clear();
         tbl_products.getColumns().addAll(column_product, column_count);
@@ -199,8 +199,8 @@ public class ChefPanelController {
         productsService = (ProductsService) springContext.getBean("productsServiceImpl");
         ordersService = (OrdersService) springContext.getBean("ordersServiceImpl");
 
-        column_product.setCellValueFactory(new PropertyValueFactory<>("name"));
-        column_count.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        column_product.setCellValueFactory(new PropertyValueFactory<>("product_name"));
+        column_count.setCellValueFactory(new PropertyValueFactory<>("product_quantity"));
         tbl_products.setItems(getObservableListAllProducts());
         tbl_products.getColumns().clear();
         tbl_products.getColumns().addAll(column_product, column_count);

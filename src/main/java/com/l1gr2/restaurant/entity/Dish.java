@@ -33,6 +33,10 @@ public class Dish {
         this.category = category;
     }
 
+    public Dish(){
+
+    }
+
     public int getId() {
         return Id;
     }
@@ -75,12 +79,6 @@ public class Dish {
 
     @Override
     public String toString() {
-        return "Dish{" +
-                "Id=" + Id +
-                ", name='" + name + '\'' +
-                ", descripion='" + descripion + '\'' +
-                ", price=" + price +
-                ", category='" + category + '\'' +
-                '}';
+        return name + "(" + descripion +")";
     }
 }
