@@ -41,9 +41,8 @@ public class LoginController {
 
 
 
-        String nick_user=textfield_login_name.getText(); //przypisanie z textfielda nick'u wprowadzonego przez usera
-        String passwrod_user=text_field_password.getText(); //przypisanie z textfielda hasła wprowadzonego przez usera
-        if(nick.equals(nick_user) && password.equals(passwrod_user) && !role.isEmpty())
+
+        if(!role.isEmpty())
             {
                 if(role.equals("Kelner")){
                     SceneManager.renderScene("tables-page");
