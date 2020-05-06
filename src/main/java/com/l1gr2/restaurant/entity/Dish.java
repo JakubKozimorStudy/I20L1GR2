@@ -6,78 +6,81 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "dania")
+@Table(name = "dish")
 public class Dish {
 
     @Id
-    @Column(name = "Id_dania")
+    @Column(name = "dish_id")
     private int Id;
 
-    @Column(name = "Nazwa")
+    @Column(name = "dish_name")
     private String name;
 
-    @Column(name = "Produkty")
-    private String products;
+    @Column(name = "descripion")
+    private String descripion;
 
-    @Column(name = "Cena")
+    @Column(name = "dish_price")
     private int price;
 
-    public Dish(int id, String name, String products, int price) {
+    @Column(name = "category")
+    private String category;
+
+    public Dish(int id, String name, String descripion, int price, String category) {
         Id = id;
         this.name = name;
-        this.products = products;
+        this.descripion = descripion;
         this.price = price;
-    }
-
-    public Dish(){
-
+        this.category = category;
     }
 
     public int getId() {
         return Id;
     }
 
-    public void setId(int id) {
-        Id = id;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getProducts() {
-        return products;
-    }
-
-    public void setProducts(String products) {
-        this.products = products;
+    public String getDescripion() {
+        return descripion;
     }
 
     public int getPrice() {
         return price;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setId(int id) {
+        Id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescripion(String descripion) {
+        this.descripion = descripion;
+    }
+
     public void setPrice(int price) {
         this.price = price;
     }
 
-    /*@Override
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    @Override
     public String toString() {
         return "Dish{" +
                 "Id=" + Id +
                 ", name='" + name + '\'' +
-                ", products='" + products + '\'' +
+                ", descripion='" + descripion + '\'' +
                 ", price=" + price +
+                ", category='" + category + '\'' +
                 '}';
-    }*/
-
-    @Override
-    public String toString() {
-        return  name + "(" + products + ")";
     }
-
 }

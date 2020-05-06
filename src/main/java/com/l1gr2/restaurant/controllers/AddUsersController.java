@@ -95,8 +95,7 @@ public class AddUsersController {
     }
 
     private void assignValuesToNewUser(Users newUser) {
-        newUser.setFirstName(firstName.getText());
-        newUser.setLastName(lastName.getText());
+        newUser.setFullname(firstName.getText());
         newUser.setLogin(login.getText());
         newUser.setPassword(password.getText());
         newUser.setRole(roleComboBox.getValue());

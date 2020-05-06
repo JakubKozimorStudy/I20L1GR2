@@ -1,17 +1,17 @@
 package com.l1gr2.restaurant.service;
 
-import com.l1gr2.restaurant.entity.Products;
+import com.l1gr2.restaurant.entity.Inventory;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
 public interface ProductsService {
 
-    List<Products> getAllProducts();
+    List<Inventory> getAllProducts();
 
-    List<Products> findByNames(String name);
+    List<Inventory> findByNames(String name);
 
-    void updateProduct(Products selectedItem, int quantity);
+    void updateProduct(Inventory selectedItem, int quantity);
 
 
 }

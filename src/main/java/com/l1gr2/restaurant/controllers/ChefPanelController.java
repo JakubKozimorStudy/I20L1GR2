@@ -4,7 +4,7 @@ import com.l1gr2.restaurant.RestaurantApplication;
 import com.l1gr2.restaurant.SceneManager;
 import com.l1gr2.restaurant.entity.Dish;
 import com.l1gr2.restaurant.entity.Orders;
-import com.l1gr2.restaurant.entity.Products;
+import com.l1gr2.restaurant.entity.Inventory;
 import com.l1gr2.restaurant.repository.ProductsRepository;
 import com.l1gr2.restaurant.service.OrdersService;
 import com.l1gr2.restaurant.service.ProductsService;
@@ -25,22 +25,22 @@ public class ChefPanelController {
 
 
     @FXML
-    private TableView<Products> tbl_products;
+    private TableView<Inventory> tbl_products;
 
     @FXML
-    private TableColumn<Products, String> column_product;
+    private TableColumn<Inventory, String> column_product;
 
     @FXML
-    private TableColumn<Products, String> column_count;
+    private TableColumn<Inventory, String> column_count;
 
     @FXML
-    private TableView<Products> tbl_used_products;
+    private TableView<Inventory> tbl_used_products;
 
     @FXML
-    private TableColumn<Products, String> column_used_product;
+    private TableColumn<Inventory, String> column_used_product;
 
     @FXML
-    private TableColumn<Products, String> column_used_count;
+    private TableColumn<Inventory, String> column_used_count;
 
     @FXML
     private TextField text_product;
@@ -60,23 +60,23 @@ public class ChefPanelController {
     @FXML
     private ChoiceBox choice_status;
 
-    List<Products> used_products = new ArrayList<Products>();
+    List<Inventory> used_products = new ArrayList<Inventory>();
     List<Integer> help_list = new ArrayList<Integer>();
 
 
     private ProductsService productsService;
     private OrdersService ordersService;
 
-    ObservableList<Products> observableListAllProducts = FXCollections.observableArrayList();
-    ObservableList<Products> observableListUsedProducts = FXCollections.observableArrayList();
-    ObservableList<Products> observableListSearchedProducts = FXCollections.observableArrayList();
+    ObservableList<Inventory> observableListAllProducts = FXCollections.observableArrayList();
+    ObservableList<Inventory> observableListUsedProducts = FXCollections.observableArrayList();
+    ObservableList<Inventory> observableListSearchedProducts = FXCollections.observableArrayList();
 
     ObservableList<Orders> observableListAllOrders = FXCollections.observableArrayList();
     ObservableList<Integer> values = FXCollections.observableArrayList(1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
     ObservableList<String> valuesStatus = FXCollections.observableArrayList("W realizacji", "Gotowe", "Odrzucono");
 
-    public ObservableList<Products> getObservableListAllProducts() {
-        List<Products> productsList = productsService.getAllProducts();
+    public ObservableList<Inventory> getObservableListAllProducts() {
+        List<Inventory> productsList = productsService.getAllProducts();
         this.observableListAllProducts.addAll(productsList);
         return this.observableListAllProducts;
     }
@@ -130,7 +130,7 @@ public class ChefPanelController {
 
 
         for(int i=0; i<used_products.size(); i++){
-            productsService.updateProduct(used_products.get(i), help_list.get(i) - used_products.get(i).getQuantity());
+            productsService.updateProduct(used_products.get(i), help_list.get(i) - used_products.get(i).getProduct_quantity());
         }
 
         Orders order = new Orders();
@@ -158,13 +158,13 @@ public class ChefPanelController {
     @FXML
     void choice_product_action(ActionEvent event){
 
-        Products product = new Products();
-        product.setId(tbl_products.getSelectionModel().getSelectedItem().getId());
-        product.setName(tbl_products.getSelectionModel().getSelectedItem().getName());
-        product.setQuantity(Integer.parseInt(choice_products.getValue().toString()));
-        product.setUnit(tbl_products.getSelectionModel().getSelectedItem().getUnit());
+        Inventory product = new Inventory();
+        product.setProduct_id(tbl_products.getSelectionModel().getSelectedItem().getProduct_id());
+        product.setProduct_name(tbl_products.getSelectionModel().getSelectedItem().getProduct_name());
+        product.setProduct_quantity(Integer.parseInt(choice_products.getValue().toString()));
+        product.setProduct_price(tbl_products.getSelectionModel().getSelectedItem().getProduct_price());
 
-        help_list.add(tbl_products.getSelectionModel().getSelectedItem().getQuantity());
+        help_list.add(tbl_products.getSelectionModel().getSelectedItem().getProduct_quantity());
         used_products.add(product);
         observableListUsedProducts.clear();
         observableListUsedProducts.addAll(used_products);
@@ -180,7 +180,7 @@ public class ChefPanelController {
 
     @FXML
     public void onEnter(ActionEvent event){
-        List <Products> searched_list = productsService.findByNames(text_product.getText());
+        List <Inventory> searched_list = productsService.findByNames(text_product.getText());
 
         observableListSearchedProducts.clear();
         observableListSearchedProducts.addAll(searched_list);

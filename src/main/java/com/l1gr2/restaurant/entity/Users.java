@@ -3,23 +3,26 @@ package com.l1gr2.restaurant.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "pracownicy")
+@Table(name = "users")
 public class Users {
 
     @Id
     @Column(name = "login")
     private String login;
-    @Column(name = "Imie")
-    private String firstName;
-    @Column(name = "Nazwisko")
-    private String lastName;
-    @Column(name = "haslo")
+    @Column(name = "name")
+    private String fullname;
+    @Column(name = "password")
     private String password;
-    @Column(name = "rola")
-    private String role;
+    @Column(name = "position")
+    private  String role;
 
-    public Users() {
+    public Users(String login, String fullname, String password, String role) {
+        this.login = login;
+        this.fullname = fullname;
+        this.password = password;
+        this.role = role;
     }
+    public Users (){};
 
     public String getLogin() {
         return login;
@@ -29,20 +32,12 @@ public class Users {
         this.login = login;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
     public String getPassword() {
@@ -59,16 +54,5 @@ public class Users {
 
     public void setRole(String role) {
         this.role = role;
-    }
-
-    @Override
-    public String toString() {
-        return "Users{" +
-                "login='" + login + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", password='" + password + '\'' +
-                ", role='" + role + '\'' +
-                '}';
     }
 }

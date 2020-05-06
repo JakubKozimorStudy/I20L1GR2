@@ -9,11 +9,14 @@ import java.util.Date;
 public class Orders {
 
     @Id
-    @Column(name = "summary_Id")
+    @Column(name = "summary_id")
     private int Id;
 
     @Column(name = "Date")
     private Date date;
+
+    @Column(name ="quantity")
+    private int quantity;
 
     @Column(name = "status")
     private String status;
@@ -23,16 +26,15 @@ public class Orders {
     @JoinColumn(name="dish")
     private Dish dish;
 
-
-    public Orders(int id, Date date, Dish dish, String status) {
+    public Orders(int id, Date date, int quantity, String status, Dish dish) {
         Id = id;
         this.date = date;
-        this.dish = dish;
+        this.quantity = quantity;
         this.status = status;
+        this.dish = dish;
     }
 
-    public Orders()
-    {
+    public Orders() {
 
     }
 
@@ -52,12 +54,12 @@ public class Orders {
         this.date = date;
     }
 
-    public Dish getDish() {
-        return dish;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setDish(Dish dish) {
-        this.dish = dish;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public String getStatus() {
@@ -68,13 +70,22 @@ public class Orders {
         this.status = status;
     }
 
+    public Dish getDish() {
+        return dish;
+    }
+
+    public void setDish(Dish dish) {
+        this.dish = dish;
+    }
+
     @Override
     public String toString() {
         return "Orders{" +
                 "Id=" + Id +
-                ", date='" + date + '\'' +
-                ", dish=" + dish +
+                ", date=" + date +
+                ", quantity='" + quantity + '\'' +
                 ", status='" + status + '\'' +
+                ", dish=" + dish +
                 '}';
     }
 }
