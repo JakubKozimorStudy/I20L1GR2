@@ -26,7 +26,7 @@ CREATE TABLE `users` (
   `name` varchar(50) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
   `login` varchar(16) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
   `password` varchar(16) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
-  `position` text CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
+  `position` varchar(40) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
   PRIMARY KEY (`login`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_polish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
