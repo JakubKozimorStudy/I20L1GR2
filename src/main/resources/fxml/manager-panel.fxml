@@ -6,50 +6,65 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.l1gr2.restaurant.controllers.ManagerPanelController">
    <children>
-      <Text layoutX="104.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raporty" textAlignment="CENTER" wrappingWidth="178.13671875">
+      <Text fill="#009fff" layoutX="104.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raporty" textAlignment="CENTER" wrappingWidth="178.13671875">
          <font>
             <Font name="System Bold Italic" size="22.0" />
          </font></Text>
       <TableView layoutX="51.0" layoutY="60.0" prefHeight="200.0" prefWidth="302.0">
         <columns>
-          <TableColumn prefWidth="220.0" text="Raport" />
-          <TableColumn prefWidth="81.0" text="Data" />
+          <TableColumn prefWidth="220.0" style="-fx-color: #009fff;" text="Raport" />
+          <TableColumn prefWidth="81.0" style="-fx-color: #009fff;" text="Data" />
         </columns>
       </TableView>
-      <Button layoutX="51.0" layoutY="274.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="154.0" text="Wygeneruj raport" />
-      <Text layoutX="547.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produkty">
+      <Button layoutX="51.0" layoutY="268.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="186.0" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Wygeneruj raport" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Text fill="#009fff" layoutX="547.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produkty">
          <font>
             <Font name="System Bold Italic" size="22.0" />
          </font>
       </Text>
       <TableView layoutX="416.0" layoutY="60.0" prefHeight="200.0" prefWidth="345.0">
         <columns>
-          <TableColumn prefWidth="196.0" text="Produkt" />
-          <TableColumn prefWidth="86.0" text="Ilość" />
-            <TableColumn prefWidth="75.0" text="Jedn." />
+          <TableColumn prefWidth="196.0" style="-fx-color: #009fff;" text="Produkt" />
+          <TableColumn prefWidth="86.0" style="-fx-color: #009fff;" text="Ilość" />
+            <TableColumn prefWidth="75.0" style="-fx-color: #009fff;" text="Jedn." />
         </columns>
       </TableView>
-      <Button layoutX="705.0" layoutY="274.0" mnemonicParsing="false" text="Dodaj" />
-      <TextField layoutX="416.0" layoutY="274.0" prefHeight="25.0" prefWidth="142.0" promptText="Produkt" />
-      <TextField layoutX="569.0" layoutY="274.0" prefHeight="25.0" prefWidth="72.0" promptText="Ilość" />
-      <Button layoutX="626.0" layoutY="528.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="41.0" prefWidth="142.0" text="Wyloguj" />
-      <Button layoutX="625.0" layoutY="470.0" mnemonicParsing="false" onAction="#ListOfKelnersButton" prefHeight="41.0" prefWidth="142.0" text="Zarządzanie kelnerami" />
+      <Button layoutX="660.0" layoutY="313.0" mnemonicParsing="false" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Dodaj" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <TextField layoutX="433.0" layoutY="275.0" prefHeight="25.0" prefWidth="142.0" promptText="Produkt" />
+      <TextField layoutX="594.0" layoutY="275.0" prefHeight="25.0" prefWidth="72.0" promptText="Ilość" />
+      <Button layoutX="584.0" layoutY="529.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="41.0" prefWidth="142.0" style="-fx-background-color: red; -fx-background-radius: 60;" text="Wyloguj" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button layoutX="543.0" layoutY="470.0" mnemonicParsing="false" onAction="#ListOfKelnersButton" prefHeight="41.0" prefWidth="224.0" style="-fx-background-color: green; -fx-background-radius: 60;" text="Zarządzanie kelnerami" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
       <TableView layoutX="51.0" layoutY="353.0" prefHeight="174.0" prefWidth="406.0">
         <columns>
-          <TableColumn prefWidth="84.0" text="Nazwa" />
-          <TableColumn prefWidth="271.0" text="Produkty" />
-            <TableColumn prefWidth="50.0" text="Cena" />
+          <TableColumn prefWidth="84.0" style="-fx-color: #009fff;" text="Nazwa" />
+          <TableColumn prefWidth="271.0" style="-fx-color: #009fff;" text="Produkty" />
+            <TableColumn prefWidth="50.0" style="-fx-color: #009fff;" text="Cena" />
         </columns>
       </TableView>
-      <Button layoutX="470.0" layoutY="549.0" mnemonicParsing="false" text="Dodaj" />
+      <Button layoutX="467.0" layoutY="542.0" mnemonicParsing="false" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Dodaj" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
       <TextField layoutX="51.0" layoutY="549.0" prefHeight="25.0" prefWidth="80.0" promptText="Nazwa" />
       <TextField layoutX="144.0" layoutY="549.0" prefHeight="25.0" prefWidth="255.0" promptText="Produkty" />
       <TextField layoutX="409.0" layoutY="549.0" prefHeight="25.0" prefWidth="48.0" promptText="Cena" />
-      <Text layoutX="223.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dania" textAlignment="CENTER">
+      <Text fill="#009fff" layoutX="223.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dania" textAlignment="CENTER">
          <font>
             <Font name="System Bold Italic" size="22.0" />
          </font>
       </Text>
-      <TextField layoutX="648.0" layoutY="274.0" prefHeight="25.0" prefWidth="48.0" promptText="jedn." />
+      <TextField layoutX="696.0" layoutY="275.0" prefHeight="25.0" prefWidth="48.0" promptText="jedn." />
    </children>
 </AnchorPane>

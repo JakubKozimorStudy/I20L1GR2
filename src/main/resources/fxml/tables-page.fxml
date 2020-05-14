@@ -1,21 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.l1gr2.restaurant.controllers.TablesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.l1gr2.restaurant.controllers.TablesController">
    <children>
-      <Button layoutX="622.0" layoutY="445.0" mnemonicParsing="false" onAction="#table_9" prefHeight="121.0" prefWidth="87.0" text="Stolik nr 9" />
-      <Button layoutX="66.0" layoutY="32.0" mnemonicParsing="false" onAction="#table_3" prefHeight="121.0" prefWidth="87.0" text="Stolik nr 3" />
-      <Button layoutX="475.0" layoutY="445.0" mnemonicParsing="false" onAction="#table_8" prefHeight="121.0" prefWidth="87.0" text="Stolik nr 8" />
-      <Button layoutX="320.0" layoutY="445.0" mnemonicParsing="false" onAction="#table_7" prefHeight="121.0" prefWidth="87.0" text="Stolik nr 7" />
-      <Button layoutX="622.0" layoutY="101.0" mnemonicParsing="false" onAction="#table_6" prefHeight="232.0" prefWidth="87.0" text="Stolik nr 6" />
-      <Button layoutX="465.0" layoutY="101.0" mnemonicParsing="false" onAction="#table_5" prefHeight="232.0" prefWidth="87.0" text="Stolik nr 5" />
-      <Button layoutX="302.0" layoutY="101.0" mnemonicParsing="false" onAction="#table_4" prefHeight="232.0" prefWidth="87.0" text="Stolik nr 4" />
-      <Button layoutX="126.0" layoutY="240.0" mnemonicParsing="false" onAction="#table_2" prefHeight="120.0" prefWidth="87.0" text="Stolik nr 2" />
-      <Button layoutY="408.0" mnemonicParsing="false" onAction="#table_1" prefHeight="87.0" prefWidth="115.0" text="Stolik nr 1" />
-      <Text layoutX="369.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stoliki" />
-      <Button layoutX="601.0" layoutY="17.0" mnemonicParsing="false" onAction="#back" text="Porzuć" />
+      <Button layoutX="622.0" layoutY="445.0" mnemonicParsing="false" onAction="#table_9" prefHeight="121.0" prefWidth="96.0" style="-fx-background-radius: 25; -fx-background-color: #8b4513;" text="Stolik nr 9" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="66.0" layoutY="32.0" mnemonicParsing="false" onAction="#table_3" prefHeight="121.0" prefWidth="96.0" style="-fx-background-radius: 25; -fx-background-color: #8b4513;" text="Stolik nr 3" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="475.0" layoutY="445.0" mnemonicParsing="false" onAction="#table_8" prefHeight="121.0" prefWidth="96.0" style="-fx-background-radius: 25; -fx-background-color: #8b4513;" text="Stolik nr 8" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="320.0" layoutY="445.0" mnemonicParsing="false" onAction="#table_7" prefHeight="121.0" prefWidth="96.0" style="-fx-background-radius: 25; -fx-background-color: #8b4513;" text="Stolik nr 7" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="622.0" layoutY="101.0" mnemonicParsing="false" onAction="#table_6" prefHeight="232.0" prefWidth="96.0" style="-fx-background-radius: 25; -fx-background-color: #8b4513;" text="Stolik nr 6" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="465.0" layoutY="101.0" mnemonicParsing="false" onAction="#table_5" prefHeight="232.0" prefWidth="96.0" style="-fx-background-radius: 25; -fx-background-color: #8b4513;" text="Stolik nr 5" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="302.0" layoutY="101.0" mnemonicParsing="false" onAction="#table_4" prefHeight="232.0" prefWidth="96.0" style="-fx-background-radius: 25; -fx-background-color: #8b4513;" text="Stolik nr 4" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="126.0" layoutY="240.0" mnemonicParsing="false" onAction="#table_2" prefHeight="120.0" prefWidth="96.0" style="-fx-background-radius: 25; -fx-background-color: #8b4513;" text="Stolik nr 2" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="38.0" layoutY="402.0" mnemonicParsing="false" onAction="#table_1" prefHeight="87.0" prefWidth="115.0" style="-fx-background-radius: 25; -fx-background-color: #8b4513;" text="Stolik nr 1" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Text fill="#009fff" layoutX="345.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stoliki">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font></Text>
+      <Button layoutX="601.0" layoutY="17.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: red; -fx-background-radius: 30;" text="Porzuć" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
    </children>
 </AnchorPane>

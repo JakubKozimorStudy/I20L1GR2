@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.l1gr2.restaurant.controllers.list_of_dishesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.l1gr2.restaurant.controllers.list_of_dishesController">
    <children>
-      <Text layoutX="369.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zamówienie" />
+      <Text fill="#009fff" layoutX="280.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zamówienie">
+         <font>
+            <Font name="System Bold Italic" size="42.0" />
+         </font></Text>
       <ListView fx:id="menu" layoutX="19.0" layoutY="60.0" prefHeight="525.0" prefWidth="208.0" />
-      <Button layoutX="589.0" layoutY="138.0" mnemonicParsing="false" onAction="#add" text="Dodaj do zamówienia" />
-      <Button layoutX="640.0" layoutY="323.0" mnemonicParsing="false" onAction="#cancel" text="Porzuć" />
+      <Button layoutX="553.0" layoutY="129.0" mnemonicParsing="false" onAction="#add" prefHeight="39.0" prefWidth="236.0" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Dodaj do zamówienia" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button layoutX="552.0" layoutY="398.0" mnemonicParsing="false" onAction="#cancel" prefHeight="38.0" prefWidth="236.0" style="-fx-background-color: red; -fx-background-radius: 60;" text="Porzuć" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
       <ListView fx:id="order" layoutX="266.0" layoutY="60.0" prefHeight="525.0" prefWidth="269.0" />
-      <Button layoutX="589.0" layoutY="184.0" mnemonicParsing="false" onAction="#delete" prefHeight="31.0" prefWidth="164.0" text="Usuń z zamówienia" />
-      <Button layoutX="589.0" layoutY="228.0" mnemonicParsing="false" onAction="#clean" prefHeight="31.0" prefWidth="164.0" text="Wyczyść zamówienie" />
-      <Button layoutX="590.0" layoutY="275.0" mnemonicParsing="false" onAction="#pay" prefHeight="31.0" prefWidth="164.0" text="Przyjmij płatność" />
+      <Button layoutX="553.0" layoutY="184.0" mnemonicParsing="false" onAction="#delete" prefHeight="39.0" prefWidth="236.0" style="-fx-background-radius: 60; -fx-background-color: #009fff;" text="Usuń z zamówienia" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button layoutX="553.0" layoutY="242.0" mnemonicParsing="false" onAction="#clean" prefHeight="39.0" prefWidth="236.0" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Wyczyść zamówienie" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button layoutX="553.0" layoutY="300.0" mnemonicParsing="false" onAction="#pay" prefHeight="39.0" prefWidth="236.0" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Przyjmij płatność" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
    </children>
 </AnchorPane>

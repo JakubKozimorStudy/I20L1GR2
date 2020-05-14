@@ -8,23 +8,23 @@
    <children>
       <TableView fx:id="tableViewListOfUsers" layoutX="14.0" layoutY="14.0" prefHeight="570.0" prefWidth="553.0">
         <columns>
-          <TableColumn fx:id="textFieldFirstName" prefWidth="117.0" text="Imię" />
-          <TableColumn fx:id="textFieldLastName" minWidth="0.0" prefWidth="179.0" text="Nazwisko" />
-            <TableColumn fx:id="textFieldLogin" prefWidth="130.0" text="Login" />
-            <TableColumn fx:id="textFieldRole" prefWidth="125.0" text="Rola" />
+          <TableColumn fx:id="textFieldFirstName" prefWidth="117.0" style="-fx-color: #009fff;" text="Imię" />
+          <TableColumn fx:id="textFieldLastName" minWidth="0.0" prefWidth="179.0" style="-fx-color: #009fff;" text="Nazwisko" />
+            <TableColumn fx:id="textFieldLogin" prefWidth="130.0" style="-fx-color: #009fff;" text="Login" />
+            <TableColumn fx:id="textFieldRole" prefWidth="125.0" style="-fx-color: #009fff;" text="Rola" />
         </columns>
       </TableView>
-      <Button layoutX="593.0" layoutY="81.0" mnemonicParsing="false" onAction="#addUserButton" prefHeight="39.0" prefWidth="190.0" text="Dodaj użytkownika">
+      <Button layoutX="593.0" layoutY="81.0" mnemonicParsing="false" onAction="#addUserButton" prefHeight="39.0" prefWidth="190.0" style="-fx-background-radius: 60; -fx-background-color: #009fff;" text="Dodaj użytkownika" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="593.0" layoutY="139.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="39.0" prefWidth="190.0" text="Usuń użytkownika">
+      <Button layoutX="593.0" layoutY="139.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="39.0" prefWidth="190.0" style="-fx-background-radius: 60; -fx-background-color: #009fff;" text="Usuń użytkownika" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="593.0" layoutY="521.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="39.0" prefWidth="190.0" text="Wyloguj">
+      <Button layoutX="593.0" layoutY="521.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="39.0" prefWidth="190.0" style="-fx-background-radius: 60; -fx-background-color: red;" text="Wyloguj" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
