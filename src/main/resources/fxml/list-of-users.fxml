@@ -8,10 +8,9 @@
    <children>
       <TableView fx:id="tableViewListOfUsers" layoutX="14.0" layoutY="14.0" prefHeight="570.0" prefWidth="553.0">
         <columns>
-          <TableColumn fx:id="textFieldFirstName" prefWidth="117.0" style="-fx-color: #009fff;" text="Imię" />
-          <TableColumn fx:id="textFieldLastName" minWidth="0.0" prefWidth="179.0" style="-fx-color: #009fff;" text="Nazwisko" />
-            <TableColumn fx:id="textFieldLogin" prefWidth="130.0" style="-fx-color: #009fff;" text="Login" />
-            <TableColumn fx:id="textFieldRole" prefWidth="125.0" style="-fx-color: #009fff;" text="Rola" />
+          <TableColumn fx:id="textFieldFullname" minWidth="0.0" prefWidth="204.99998474121094" style="-fx-color: #009fff;" text="Imie i nazwisko" />
+            <TableColumn fx:id="textFieldLogin" prefWidth="202.0" style="-fx-color: #009fff;" text="Login" />
+            <TableColumn fx:id="textFieldRole" prefWidth="145.0" style="-fx-color: #009fff;" text="Rola" />
         </columns>
       </TableView>
       <Button layoutX="593.0" layoutY="81.0" mnemonicParsing="false" onAction="#addUserButton" prefHeight="39.0" prefWidth="190.0" style="-fx-background-radius: 60; -fx-background-color: #009fff;" text="Dodaj użytkownika" textFill="WHITE">

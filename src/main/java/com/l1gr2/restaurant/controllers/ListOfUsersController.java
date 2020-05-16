@@ -25,10 +25,7 @@ public class ListOfUsersController{
     private TableView<Users> tableViewListOfUsers;
 
     @FXML
-    private TableColumn<Users, String> textFieldFirstName;
-
-    @FXML
-    private TableColumn<Users, String> textFieldLastName;
+    private TableColumn<Users, String> textFieldFullname;
 
     @FXML
     private TableColumn<Users, String> textFieldLogin;
@@ -66,7 +63,7 @@ public class ListOfUsersController{
         this.observableListAllUsers = FXCollections.observableArrayList();
         tableViewListOfUsers.getColumns().clear();
         tableViewListOfUsers.setItems(getObservableListAllUsers());
-        tableViewListOfUsers.getColumns().addAll(textFieldFirstName, textFieldLastName, textFieldLogin, textFieldRole);
+        tableViewListOfUsers.getColumns().addAll(textFieldFullname, textFieldLogin, textFieldRole);
     }
 
     @FXML
@@ -74,13 +71,12 @@ public class ListOfUsersController{
         ConfigurableApplicationContext springContext = RestaurantApplication.getSpringContext();
         usersService = (UsersService) springContext.getBean("usersServiceImpl");
 
-        textFieldFirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-        textFieldLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        textFieldFullname.setCellValueFactory(new PropertyValueFactory<>("fullname"));
         textFieldLogin.setCellValueFactory(new PropertyValueFactory<>("login"));
         textFieldRole.setCellValueFactory(new PropertyValueFactory<>("role"));
         tableViewListOfUsers.getColumns().clear();
         tableViewListOfUsers.setItems(getObservableListAllUsers());
-        tableViewListOfUsers.getColumns().addAll(textFieldFirstName, textFieldLastName, textFieldLogin, textFieldRole);
+        tableViewListOfUsers.getColumns().addAll(textFieldFullname, textFieldLogin, textFieldRole);
     }
 
 }
