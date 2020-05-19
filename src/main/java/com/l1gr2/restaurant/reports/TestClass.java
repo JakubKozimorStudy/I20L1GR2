@@ -31,7 +31,7 @@ public class TestClass {
         this.productsRepository = productsRepository;
     }
 
-    @EventListener(ApplicationReadyEvent.class)
+//    @EventListener(ApplicationReadyEvent.class)
     public void testMethod() throws JRException, FileNotFoundException {
         reportGenerator.generateReportUsers(usersRepository.findAll());
         reportGenerator.generateReportDish(dishRepository.findAll());
