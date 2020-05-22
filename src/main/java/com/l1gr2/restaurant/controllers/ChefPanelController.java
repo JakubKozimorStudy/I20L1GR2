@@ -16,11 +16,13 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Controller;
 
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Controller
 public class ChefPanelController {
 
 
@@ -152,7 +154,7 @@ public class ChefPanelController {
 
     @FXML
     void logoutButton(ActionEvent event) {
-        SceneManager.renderScene("menuPage");
+        SceneManager.renderScene("loginPage");
     }
 
     @FXML
