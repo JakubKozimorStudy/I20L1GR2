@@ -26,6 +26,13 @@ public class Inventory {
 
     public Inventory(){}
 
+    public Inventory(int product_id, String product_name, int product_quantity, int product_price) {
+        this.product_id = product_id;
+        this.product_name = product_name;
+        this.product_quantity = product_quantity;
+        this.product_price = product_price;
+    }
+
     public int getProduct_id() {
         return product_id;
     }
