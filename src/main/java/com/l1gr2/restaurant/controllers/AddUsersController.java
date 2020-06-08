@@ -15,6 +15,10 @@ import javafx.scene.control.TextField;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
 
+/**
+ * author Jakub Kozimor
+ * Klasa odpowiedzialna za tworzenie nowych użytkowników
+ */
 @Controller
 public class AddUsersController {
 
@@ -55,6 +59,10 @@ public class AddUsersController {
     }
 
 
+    /**
+     * @param event , kliknięcie
+     *              Metdoa tworząca nowego użytkownika. Metoda tworzy nowy obiekt użytkownika
+     */
     @FXML
     void addNewUser(ActionEvent event) {
         notTheSamePasswordMessage.setText("");
@@ -68,6 +76,10 @@ public class AddUsersController {
         }
     }
 
+    /**
+     * @return informacje o tym czy użytkownik o podanym nicku istnieje, jeżeli istnieje, zostaje
+     * zwrócony odpowiedni komunikat
+     */
     private boolean checkUniqueness() {
         if (usersService.checkUniqueness(login.getText())) {
             emptyFilesMessage.setText("Uzytkownik z takim loginem już istnieje");
@@ -77,6 +89,12 @@ public class AddUsersController {
         return true;
     }
 
+    /**
+     * @return informacje o źle wprowadzonych danych, imie, nazwisko, login
+     * i hasło są konieczne do stworzenia użytkownika
+     *
+     * @return jeżeli hasła nie są takie same użytkownik dostaje informacje o błędzie
+     */
     private boolean checkFields() {
         if (firstName.getText().isEmpty() || lastName.getText().isEmpty() || login.getText().isEmpty() ||
                 password.getText().isEmpty() || roleComboBox.getValue() == null) {
@@ -88,7 +106,8 @@ public class AddUsersController {
                 return true;
             } else {
                 notTheSamePasswordMessage.setText("Hasła muszą być identyczne");
-                notTheSamePasswordMessage.setStyle("-fx-text-fill: red;");;
+                notTheSamePasswordMessage.setStyle("-fx-text-fill: red;");
+
                 return false;
             }
         }

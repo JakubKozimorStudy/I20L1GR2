@@ -11,15 +11,17 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
 
+/**
+ * Klasa odpowiedzialna za zwracanie listy użytkowników
+ */
 @Controller
-public class ListOfUsersController{
+public class ListOfUsersController {
 
     @FXML
     private TableView<Users> tableViewListOfUsers;
@@ -41,6 +43,11 @@ public class ListOfUsersController{
         SceneManager.renderScene("menuPage");
     }
 
+    /**
+     * @param event kliknięcie przycisk
+     *              Metoda odpowiedzialna jest za dodanie użytkownika, po kliknięciu przycisku,
+     *              aplikacja uruchamia okno dodawania użytkownika
+     */
     @FXML
     void addUserButton(ActionEvent event) {
         SceneManager.renderScene("addUser");
@@ -52,6 +59,10 @@ public class ListOfUsersController{
         return this.observableListAllUsers;
     }
 
+    /**
+     * @param event kliknięcie przycisku
+     *              Metoda odpowiedzialna za usuwanie zaznaczonego użytkownika
+     */
     @FXML
     void deleteUser(ActionEvent event) {
         Users selectedItem = tableViewListOfUsers.getSelectionModel().getSelectedItem();
@@ -59,6 +70,9 @@ public class ListOfUsersController{
         refreshTable();
     }
 
+    /**
+     * metoda odświeża listę użytkowników po jej edytowaniu( dodaniu lub usunięciu użytkownika)
+     */
     private void refreshTable() {
         this.observableListAllUsers = FXCollections.observableArrayList();
         tableViewListOfUsers.getColumns().clear();
