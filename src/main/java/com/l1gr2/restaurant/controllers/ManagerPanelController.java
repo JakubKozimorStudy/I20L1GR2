@@ -3,23 +3,21 @@ package com.l1gr2.restaurant.controllers;
 import com.l1gr2.restaurant.RestaurantApplication;
 import com.l1gr2.restaurant.SceneManager;
 import com.l1gr2.restaurant.entity.Dish;
-import com.l1gr2.restaurant.entity.Orders;
 import com.l1gr2.restaurant.entity.Inventory;
-import com.l1gr2.restaurant.repository.ProductsRepository;
 import com.l1gr2.restaurant.service.DishService;
-import com.l1gr2.restaurant.service.OrdersService;
 import com.l1gr2.restaurant.service.ProductsService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
-import javax.swing.*;
-import java.util.ArrayList;
+
 import java.util.List;
 
 @Controller
@@ -113,9 +111,9 @@ public class ManagerPanelController {
         ConfigurableApplicationContext springContext = RestaurantApplication.getSpringContext();
         dishService = (DishService) springContext.getBean("dishService");
 
-        mn_column_dish.setCellValueFactory(new PropertyValueFactory<>("name"));
+        mn_column_dish.setCellValueFactory(new PropertyValueFactory<>("dish_name"));
         mn_column_prod_dish.setCellValueFactory(new PropertyValueFactory<>("descripion"));
-        mn_column_price.setCellValueFactory(new PropertyValueFactory<>("price"));
+        mn_column_price.setCellValueFactory(new PropertyValueFactory<>("dish_price"));
         mn_tbl_dish.getColumns().clear();
         mn_tbl_dish.setItems(getObservableListAllDishes());
         mn_tbl_dish.getColumns().addAll(mn_column_dish, mn_column_prod_dish,mn_column_price);

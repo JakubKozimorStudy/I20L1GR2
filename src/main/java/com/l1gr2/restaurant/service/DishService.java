@@ -15,6 +15,9 @@ public class DishService {
         this.dishRepository = dishRepository;
     }
 
+    /**
+     * @return zwraca listę wszystkich dań
+     */
     public List<Dish> getAllDish() {
         return dishRepository.findAll();
     }

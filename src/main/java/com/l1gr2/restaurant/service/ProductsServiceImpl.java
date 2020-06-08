@@ -15,14 +15,25 @@ public class ProductsServiceImpl implements ProductsService {
     @Autowired
     public ProductsServiceImpl(ProductsRepository productsRepository){this.productsRepository = productsRepository;}
 
+    /**
+     * @return zwraca listę wszystkich produktów
+     */
     @Override
     public List<Inventory> getAllProducts() {
         return productsRepository.findAll();
     }
 
+    /**
+     * @param name przujmuje jako parametr nazwę produktu
+     * @return zwraca informacje o produkcie
+     */
     @Override
     public List<Inventory> findByNames(String name){return productsRepository.findByname(name);}
 
+    /**
+     * @param product przyjmuje jako parametr obiekt
+     * @param quantity aktualizuje ilość produktu
+     */
     @Override
     public void updateProduct(Inventory product, int quantity) {
 

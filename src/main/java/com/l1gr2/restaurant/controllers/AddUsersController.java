@@ -93,7 +93,7 @@ public class AddUsersController {
      * @return informacje o źle wprowadzonych danych, imie, nazwisko, login
      * i hasło są konieczne do stworzenia użytkownika
      *
-     * @return jeżeli hasła nie są takie same użytkownik dostaje informacje o błędzie
+     *
      */
     private boolean checkFields() {
         if (firstName.getText().isEmpty() || lastName.getText().isEmpty() || login.getText().isEmpty() ||
@@ -106,7 +106,7 @@ public class AddUsersController {
                 return true;
             } else {
                 notTheSamePasswordMessage.setText("Hasła muszą być identyczne");
-                notTheSamePasswordMessage.setStyle("-fx-text-fill: red;");
+                notTheSamePasswordMessage.setStyle("-fx-text-fill: #ff0000;");
 
                 return false;
             }
