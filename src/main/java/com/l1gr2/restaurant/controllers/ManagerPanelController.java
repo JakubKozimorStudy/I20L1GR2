@@ -110,6 +110,7 @@ public class ManagerPanelController {
     void initialize() {
         ConfigurableApplicationContext springContext = RestaurantApplication.getSpringContext();
         dishService = (DishService) springContext.getBean("dishService");
+        productsService = (ProductsService) springContext.getBean("productsServiceImpl");
 
         mn_column_dish.setCellValueFactory(new PropertyValueFactory<>("dish_name"));
         mn_column_prod_dish.setCellValueFactory(new PropertyValueFactory<>("descripion"));
