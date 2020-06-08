@@ -15,7 +15,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.List;
-
+/**
+ * Klasa odpowiedzialna za zwracanie listy dań
+ */
 public class list_of_dishesController {
 
     private DishService dishService;
@@ -41,30 +43,47 @@ public class list_of_dishesController {
     @FXML
     private TableColumn<Dish, Integer> PriceInOrder;
 
+    /**
+     * @param event , kliknięcie
+     *              Metoda dodająca nową potrawę do menu
+     */
     @FXML
     void add(ActionEvent event) {
         Tables.getActualTable().add(menu.getSelectionModel().getSelectedItem());
         initializeOrder();
     }
-
+    /**
+     * @param event , kliknięcie
+     *              Metoda usuwająca wybraną potrawe z zamówienia
+     */
     @FXML
     void delete(ActionEvent event) {
         Tables.getActualTable().remove(order.getSelectionModel().getSelectedItem());
         initializeOrder();
     }
-
+    /**
+     * @param event , kliknięcie
+     *              Metoda czyszcząca dane zamówienie
+     */
     @FXML
     void clean(ActionEvent event) {
         Tables.getActualTable().clear();
         initializeOrder();
     }
-
+    /**
+     * @param event , kliknięcie
+     *              Metoda czyszcząca dane zamówienie po zapłacie
+     */
     @FXML
     void pay(ActionEvent event) {
         Tables.getActualTable().clear();
         initializeOrder();
     }
-
+    /**
+     *
+     * @param event, kliknięcie
+     *               metoda odpowiedzialna za wylogowanie użytkownika i przeniesienie go na strone logowania
+     */
     @FXML
     void cancel(ActionEvent event) {
         SceneManager.renderScene("loginPage");
@@ -79,7 +98,9 @@ public class list_of_dishesController {
         this.obsevableListAllOrderedDishes.addAll(Tables.getActualTable());
         return this.obsevableListAllOrderedDishes;
     }
-
+    /**
+     * metoda dodająca danie z menu do zamówienia
+     */
     void initializeOrder() {
         this.obsevableListAllOrderedDishes = FXCollections.observableArrayList();
         order.getColumns().clear();

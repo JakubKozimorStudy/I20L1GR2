@@ -19,7 +19,10 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
-
+/**
+ * author Krzysztof Krupinski
+ * Klasa odpowiedzialna za zwracanie produktów, dań i raportów
+ */
 @Controller
 public class ManagerPanelController {
 
@@ -84,7 +87,9 @@ public class ManagerPanelController {
         this.observableListAllProducts.addAll(productsList);
         return this.observableListAllProducts;
     }
-
+    /**
+     * metoda odświeża listę produktów po jej edytowaniu( dodaniu lub usunięciu użytkownika)
+     */
     public void refresh_products_table() {
         this.observableListAllProducts = FXCollections.observableArrayList();
         mn_tbl_products.getColumns().clear();
@@ -98,11 +103,22 @@ public class ManagerPanelController {
         return this.obsevableListAllDishes;
     }
 
+    /**
+     *
+     * @param event, kliknięcie
+     *               metoda odpowiedzialna za wylogowanie użytkownika i przeniesienie go na strone logowania
+     */
+
     @FXML
     void logoutButton(ActionEvent event) {
         SceneManager.renderScene("loginPage");
     }
 
+    /**
+     *
+     * @param event, kliknięcie
+     *               metoda odpowiedzialna za przeniesienie do panelu listy użytkowników
+     */
     @FXML
     void ListOfKelnersButton(ActionEvent event) { SceneManager.renderScene("listOfUsers");}
 

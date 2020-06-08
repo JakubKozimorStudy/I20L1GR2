@@ -21,7 +21,9 @@ import org.springframework.stereotype.Controller;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Klasa odpowiedzialna za zwracanie produktów i zamówień
+ */
 @Controller
 public class ChefPanelController {
 
@@ -89,7 +91,9 @@ public class ChefPanelController {
         return this.observableListAllOrders;
     }
 
-
+    /**
+     * metoda odświeża listę produktów po jej edytowaniu( dodaniu lub usunięciu użytkownika)
+     */
 
     public void refresh_products_table(){
         this.observableListAllProducts = FXCollections.observableArrayList();
@@ -105,7 +109,9 @@ public class ChefPanelController {
 
         refresh_used_products_table();
     }
-
+    /**
+     * metoda odświeża listę produktów użytych po jej edytowaniu( dodaniu lub usunięciu użytkownika)
+     */
     public void refresh_used_products_table(){
         observableListUsedProducts.clear();
         observableListUsedProducts.addAll(used_products);
@@ -114,19 +120,32 @@ public class ChefPanelController {
         tbl_used_products.getColumns().addAll(column_used_product, column_used_count);
     }
 
-
+    /**
+     * metoda odświeża listę dań po jej edytowaniu( dodaniu lub usunięciu użytkownika)
+     */
     public void refresh_dish_table(){
         this.observableListAllOrders = FXCollections.observableArrayList();
         tbl_dishes.getColumns().clear();
         tbl_dishes.setItems(getObservableListAllOrders());
         tbl_dishes.getColumns().addAll(column_dish, column_status);
     }
+
+    /**
+     *
+     * @param event, kliknięcie
+     *               metoda odpowiedzialna za usunięcie wybranego produktu z listy użytych produktów
+     *               metoda odświeża listę użytych produktów
+     */
     @FXML
     void btn_delete(ActionEvent event) {
         used_products.remove(tbl_used_products.getSelectionModel().getSelectedIndex());
         refresh_used_products_table();
     }
-
+    /**
+     *
+     * metoda odpowiedzialna za zmiane statusu zamówienia poprzez wybranie z listy przez użytkownika
+     *
+     */
     @FXML
     void btn_status(ActionEvent event) {
 
@@ -145,18 +164,31 @@ public class ChefPanelController {
         refresh_products_table();
         refresh_dish_table();
     }
-
+    /**
+     *
+     * @param event, kliknięcie
+     *               metoda odpowiedzialna za wyczyszczenie listy użytych produktów
+     *               metoda odświeża listę użytych produktów
+     */
     @FXML
     void btn_clear(ActionEvent event) {
         used_products.clear();
         refresh_used_products_table();
     }
-
+    /**
+     *
+     * @param event, kliknięcie
+     *               metoda odpowiedzialna za wylogowanie użytkownika i przeniesienie go na strone logowania
+     */
     @FXML
     void logoutButton(ActionEvent event) {
         SceneManager.renderScene("loginPage");
     }
-
+    /**
+     *
+     * metoda odpowiedzialna za dodanie użytych składników do tabeli wykorzystane produkty
+     *
+     */
     @FXML
     void choice_product_action(ActionEvent event){
 
@@ -179,7 +211,11 @@ public class ChefPanelController {
         tbl_used_products.getColumns().addAll(column_used_product, column_used_count);
 
     }
-
+    /**
+     *
+     * metoda odpowiedzialna za wyszukiwanie produktów w bazie
+     *
+     */
     @FXML
     public void onEnter(ActionEvent event){
         List <Inventory> searched_list = productsService.findByNames(text_product.getText());
