@@ -53,5 +53,5 @@ public class TablesController {
         SceneManager.renderScene("list_of_dishes");}
 
     @FXML
-    void back (ActionEvent event){ SceneManager.renderScene("menuPage");}
+    void back (ActionEvent event){ SceneManager.renderScene("loginPage");}
 }

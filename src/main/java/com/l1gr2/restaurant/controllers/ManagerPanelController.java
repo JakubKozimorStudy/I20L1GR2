@@ -128,9 +128,9 @@ public class ManagerPanelController {
         dishService = (DishService) springContext.getBean("dishService");
         productsService = (ProductsService) springContext.getBean("productsServiceImpl");
 
-        mn_column_dish.setCellValueFactory(new PropertyValueFactory<>("dish_name"));
+        mn_column_dish.setCellValueFactory(new PropertyValueFactory<>("name"));
         mn_column_prod_dish.setCellValueFactory(new PropertyValueFactory<>("descripion"));
-        mn_column_price.setCellValueFactory(new PropertyValueFactory<>("dish_price"));
+        mn_column_price.setCellValueFactory(new PropertyValueFactory<>("price"));
         mn_tbl_dish.getColumns().clear();
         mn_tbl_dish.setItems(getObservableListAllDishes());
         mn_tbl_dish.getColumns().addAll(mn_column_dish, mn_column_prod_dish,mn_column_price);

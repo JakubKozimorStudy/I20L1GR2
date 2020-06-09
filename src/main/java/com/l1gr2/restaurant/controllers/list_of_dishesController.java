@@ -86,7 +86,7 @@ public class list_of_dishesController {
      */
     @FXML
     void cancel(ActionEvent event) {
-        SceneManager.renderScene("loginPage");
+        SceneManager.renderScene("tables-page");
     }
 
     public ObservableList<Dish> getObservableListAllDishes(){
