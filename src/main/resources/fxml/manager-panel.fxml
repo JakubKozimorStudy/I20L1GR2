@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.l1gr2.restaurant.controllers.ManagerPanelController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.l1gr2.restaurant.controllers.ManagerPanelController">
     <children>
         <Text fill="#009fff" layoutX="104.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raporty" textAlignment="CENTER" wrappingWidth="178.13671875">
             <font>
                 <Font name="System Bold Italic" size="22.0" />
             </font></Text>
-        <TableView fx:id="mn_tbl_raports" layoutX="51.0" layoutY="60.0" prefHeight="200.0" prefWidth="302.0">
-            <columns>
-                <TableColumn fx:id="mn_column_rap" prefWidth="220.0" style="-fx-color: #009fff;" text="Raport" />
-                <TableColumn fx:id="mn_column_data" prefWidth="81.0" style="-fx-color: #009fff;" text="Data" />
-            </columns>
-        </TableView>
-        <Button layoutX="51.0" layoutY="268.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="186.0" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Wygeneruj raport" textFill="WHITE">
+        <Button layoutX="87.0" layoutY="171.0" mnemonicParsing="false" onAction="#productsReportButton" prefHeight="39.0" prefWidth="212.0" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Raport produktów" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font></Button>
@@ -66,5 +64,20 @@
             </font>
         </Text>
         <TextField layoutX="696.0" layoutY="275.0" prefHeight="25.0" prefWidth="48.0" promptText="jedn." />
+      <Button layoutX="87.0" layoutY="121.0" mnemonicParsing="false" onAction="#dishesReportButton" prefHeight="39.0" prefWidth="212.0" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Raport dań" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="87.0" layoutY="69.0" mnemonicParsing="false" onAction="#usersReportButton" prefHeight="39.0" prefWidth="212.0" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Raport użytkowników" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="87.0" layoutY="221.0" mnemonicParsing="false" onAction="#ordersReportButton" prefHeight="39.0" prefWidth="212.0" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Raport zamówień" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

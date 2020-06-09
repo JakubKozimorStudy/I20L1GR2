@@ -4,6 +4,8 @@ import com.l1gr2.restaurant.RestaurantApplication;
 import com.l1gr2.restaurant.SceneManager;
 import com.l1gr2.restaurant.entity.Dish;
 import com.l1gr2.restaurant.entity.Inventory;
+import com.l1gr2.restaurant.reports.ReportGeneratorImpl;
+import com.l1gr2.restaurant.reports.ReportService;
 import com.l1gr2.restaurant.service.DishService;
 import com.l1gr2.restaurant.service.ProductsService;
 import javafx.collections.FXCollections;
@@ -15,9 +17,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import net.sf.jasperreports.engine.JRException;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 /**
  * author Krzysztof Krupinski
@@ -79,6 +83,7 @@ public class ManagerPanelController {
 
     private ProductsService productsService;
     private DishService dishService;
+    private ReportService reportService;
     ObservableList<Inventory> observableListAllProducts = FXCollections.observableArrayList();
     ObservableList<Dish> obsevableListAllDishes = FXCollections.observableArrayList();
 
@@ -123,10 +128,32 @@ public class ManagerPanelController {
     void ListOfKelnersButton(ActionEvent event) { SceneManager.renderScene("listOfUsers");}
 
     @FXML
+    void dishesReportButton(ActionEvent event) throws FileNotFoundException, JRException {
+        reportService.dishReport();
+    }
+
+    @FXML
+    void ordersReportButton(ActionEvent event) throws FileNotFoundException, JRException {
+        reportService.ordersReport();
+    }
+
+    @FXML
+    void productsReportButton(ActionEvent event) throws FileNotFoundException, JRException {
+        reportService.inventoryReport();
+    }
+
+    @FXML
+    void usersReportButton(ActionEvent event) throws FileNotFoundException, JRException {
+        reportService.usersReport();
+    }
+
+
+    @FXML
     void initialize() {
         ConfigurableApplicationContext springContext = RestaurantApplication.getSpringContext();
         dishService = (DishService) springContext.getBean("dishService");
         productsService = (ProductsService) springContext.getBean("productsServiceImpl");
+        reportService = (ReportService) springContext.getBean("reportService");
 
         mn_column_dish.setCellValueFactory(new PropertyValueFactory<>("name"));
         mn_column_prod_dish.setCellValueFactory(new PropertyValueFactory<>("descripion"));

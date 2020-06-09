@@ -14,7 +14,7 @@ import java.io.FileNotFoundException;
 
 
 @Service
-public class TestClass {
+public class ReportService {
 
     UsersRepository usersRepository;
     ReportGenerator reportGenerator;
@@ -23,7 +23,7 @@ public class TestClass {
     ProductsRepository productsRepository;
 
     @Autowired
-    public TestClass(UsersRepository usersRepository, ReportGenerator reportGenerator, DishRepository dishRepository, OrdersRepository ordersRepository, ProductsRepository productsRepository) {
+    public ReportService(UsersRepository usersRepository, ReportGenerator reportGenerator, DishRepository dishRepository, OrdersRepository ordersRepository, ProductsRepository productsRepository) {
         this.usersRepository = usersRepository;
         this.reportGenerator = reportGenerator;
         this.dishRepository = dishRepository;
@@ -31,11 +31,17 @@ public class TestClass {
         this.productsRepository = productsRepository;
     }
 
-//    @EventListener(ApplicationReadyEvent.class)
-    public void testMethod() throws JRException, FileNotFoundException {
+    public void usersReport() throws FileNotFoundException, JRException {
         reportGenerator.generateReportUsers(usersRepository.findAll());
+    }
+    public void dishReport() throws FileNotFoundException, JRException {
         reportGenerator.generateReportDish(dishRepository.findAll());
+    }
+    public void inventoryReport() throws FileNotFoundException, JRException {
         reportGenerator.generateReportInventory(productsRepository.findAll());
+    }
+    public void ordersReport() throws FileNotFoundException, JRException {
         reportGenerator.generateReportOrders(ordersRepository.findAll());
     }
+
 }
