@@ -8,10 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
 
@@ -51,7 +48,7 @@ public class AddUsersController {
     @FXML
     private Label successMessage;
 
-    ObservableList<String> roles = FXCollections.observableArrayList("Kelner", "Manager", "Kucharz", "Administrator");
+    ObservableList<String> roles = FXCollections.observableArrayList("Kelner", "Menadżer", "Kucharz", "Administrator");
 
     @FXML
     void backToUserListButton(ActionEvent event) {
@@ -61,18 +58,33 @@ public class AddUsersController {
 
     /**
      * @param event , kliknięcie
-     *              Metdoa tworząca nowego użytkownika. Metoda tworzy nowy obiekt użytkownika
+     *              Metdoa tworząca nowego użytkownika. Metoda tworzy nowy obiekt użytkownika.
+     *              Menadżer nie może dodać administratora, metoda informuje o takim błędzie.
      */
     @FXML
     void addNewUser(ActionEvent event) {
+
         notTheSamePasswordMessage.setText("");
         emptyFilesMessage.setText("");
         Users newUser = new Users();
+        String rola_dodawana;
+        rola_dodawana = roleComboBox.getValue();
+        System.out.println(rola_dodawana);
         if (checkFields() && checkUniqueness()) {
-            successMessage.setText("Dodano użytkownika");
-            successMessage.setStyle("-fx-text-fill: green;");
-            assignValuesToNewUser(newUser);
-            usersService.addUser(newUser);
+            if (LoginController.rola_aktualna.equals("Menadżer") && rola_dodawana.equals("Administrator")) {
+                Alert error = new Alert(Alert.AlertType.ERROR);
+                error.setContentText("Brak uprawnień");
+                error.setTitle("Brak uprawnień");
+                error.setHeaderText("Menadżer nie może dodać Administratora");
+                error.show();
+            } else {
+                successMessage.setText("Dodano użytkownika");
+                successMessage.setStyle("-fx-text-fill: green;");
+                assignValuesToNewUser(newUser);
+                usersService.addUser(newUser);
+            }
+
+
         }
     }
 
@@ -92,8 +104,6 @@ public class AddUsersController {
     /**
      * @return informacje o źle wprowadzonych danych, imie, nazwisko, login
      * i hasło są konieczne do stworzenia użytkownika
-     *
-     *
      */
     private boolean checkFields() {
         if (firstName.getText().isEmpty() || lastName.getText().isEmpty() || login.getText().isEmpty() ||
@@ -126,5 +136,6 @@ public class AddUsersController {
         usersService = (UsersService) springContext.getBean("usersServiceImpl");
 
         roleComboBox.setItems(roles);
+        System.out.println(LoginController.rola_aktualna);
     }
 }

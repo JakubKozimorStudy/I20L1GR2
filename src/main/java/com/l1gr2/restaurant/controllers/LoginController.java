@@ -18,7 +18,7 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class LoginController {
-
+    public static String rola_aktualna;
 
     UsersService usersService;
 
@@ -42,7 +42,7 @@ public class LoginController {
         String password = text_field_password.getText();
 
         String role = usersService.findUserAndGetRole(nick, password);
-
+        rola_aktualna=role;
 
         if (!role.isEmpty()) {
             if (role.equals("Kelner")) {

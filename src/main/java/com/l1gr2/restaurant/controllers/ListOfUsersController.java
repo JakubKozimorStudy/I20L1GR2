@@ -40,7 +40,7 @@ public class ListOfUsersController {
 
     @FXML
     void logoutButton(ActionEvent event) {
-        SceneManager.renderScene("menuPage");
+        SceneManager.renderScene("loginPage");
     }
 
     /**
