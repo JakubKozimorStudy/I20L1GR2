@@ -69,7 +69,7 @@ public class AddUsersController {
         Users newUser = new Users();
         String rola_dodawana;
         rola_dodawana = roleComboBox.getValue();
-        System.out.println(rola_dodawana);
+
         if (checkFields() && checkUniqueness()) {
             if (LoginController.rola_aktualna.equals("Menadżer") && rola_dodawana.equals("Administrator")) {
                 Alert error = new Alert(Alert.AlertType.ERROR);
@@ -136,6 +136,6 @@ public class AddUsersController {
         usersService = (UsersService) springContext.getBean("usersServiceImpl");
 
         roleComboBox.setItems(roles);
-        System.out.println(LoginController.rola_aktualna);
+
     }
 }
