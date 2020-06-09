@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -61,13 +62,28 @@ public class ListOfUsersController {
 
     /**
      * @param event kliknięcie przycisku
-     *              Metoda odpowiedzialna za usuwanie zaznaczonego użytkownika
+     *              Metoda odpowiedzialna za usuwanie zaznaczonego użytkownika, menadżer nie może usunąc administratora
      */
     @FXML
     void deleteUser(ActionEvent event) {
-        Users selectedItem = tableViewListOfUsers.getSelectionModel().getSelectedItem();
-        usersService.deleteUser(selectedItem);
-        refreshTable();
+        String rola_del;
+        Users usun= new Users();
+        usun=tableViewListOfUsers.getSelectionModel().getSelectedItem();
+        rola_del=usun.getRole();
+
+        if (LoginController.rola_aktualna.equals("Menadżer") && rola_del.equals("Administrator")) {
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setContentText("Brak uprawnień");
+            error.setTitle("Brak uprawnień");
+            error.setHeaderText("Menadżer nie może usunąc Administratora");
+            error.show();
+        } else {
+            Users selectedItem = tableViewListOfUsers.getSelectionModel().getSelectedItem();
+            usersService.deleteUser(selectedItem);
+            refreshTable();
+        }
+
+
     }
 
     /**
