@@ -5,66 +5,66 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.l1gr2.restaurant.controllers.ManagerPanelController">
-   <children>
-      <Text fill="#009fff" layoutX="104.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raporty" textAlignment="CENTER" wrappingWidth="178.13671875">
-         <font>
-            <Font name="System Bold Italic" size="22.0" />
-         </font></Text>
-      <TableView fx:id="mn_tbl_raports" layoutX="51.0" layoutY="60.0" prefHeight="200.0" prefWidth="302.0">
-        <columns>
-          <TableColumn fx:id="mn_column_rap" prefWidth="220.0" style="-fx-color: #009fff;" text="Raport" />
-          <TableColumn fx:id="mn_column_data" prefWidth="81.0" style="-fx-color: #009fff;" text="Data" />
-        </columns>
-      </TableView>
-      <Button layoutX="51.0" layoutY="268.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="186.0" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Wygeneruj raport" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font></Button>
-      <Text fill="#009fff" layoutX="547.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produkty">
-         <font>
-            <Font name="System Bold Italic" size="22.0" />
-         </font>
-      </Text>
-      <TableView fx:id="mn_tbl_products" layoutX="416.0" layoutY="60.0" prefHeight="200.0" prefWidth="345.0">
-        <columns>
-          <TableColumn fx:id="mn_column_product" prefWidth="196.0" style="-fx-color: #009fff;" text="Produkt" />
-          <TableColumn fx:id="mn_column_count" prefWidth="86.0" style="-fx-color: #009fff;" text="Ilość" />
-            <TableColumn prefWidth="75.0" style="-fx-color: #009fff;" text="Jedn." />
-        </columns>
-      </TableView>
-      <Button fx:id="add_prod" layoutX="660.0" layoutY="313.0" mnemonicParsing="false" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Dodaj" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font></Button>
-      <TextField fx:id="add_prod_prod" layoutX="433.0" layoutY="275.0" prefHeight="25.0" prefWidth="142.0" promptText="Produkt" />
-      <TextField fx:id="add_prod_count" layoutX="594.0" layoutY="275.0" prefHeight="25.0" prefWidth="72.0" promptText="Ilość" />
-      <Button layoutX="584.0" layoutY="529.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="41.0" prefWidth="142.0" style="-fx-background-color: red; -fx-background-radius: 60;" text="Wyloguj" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font></Button>
-      <Button layoutX="543.0" layoutY="470.0" mnemonicParsing="false" onAction="#ListOfKelnersButton" prefHeight="41.0" prefWidth="224.0" style="-fx-background-color: green; -fx-background-radius: 60;" text="Zarządzanie kelnerami" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font></Button>
-      <TableView fx:id="mn_tbl_dish" layoutX="51.0" layoutY="353.0" prefHeight="174.0" prefWidth="406.0">
-        <columns>
-          <TableColumn fx:id="mn_column_dish" prefWidth="84.0" style="-fx-color: #009fff;" text="Nazwa" />
-          <TableColumn fx:id="mn_column_prod_dish" prefWidth="271.0" style="-fx-color: #009fff;" text="Produkty" />
-            <TableColumn fx:id="mn_column_price" prefWidth="50.0" style="-fx-color: #009fff;" text="Cena" />
-        </columns>
-      </TableView>
-      <Button fx:id="add_dish" layoutX="467.0" layoutY="542.0" mnemonicParsing="false" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Dodaj" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font></Button>
-      <TextField fx:id="add_dish_dish" layoutX="51.0" layoutY="549.0" prefHeight="25.0" prefWidth="80.0" promptText="Nazwa" />
-      <TextField fx:id="add_dish_prod" layoutX="144.0" layoutY="549.0" prefHeight="25.0" prefWidth="255.0" promptText="Produkty" />
-      <TextField fx:id="add_dish_price" layoutX="409.0" layoutY="549.0" prefHeight="25.0" prefWidth="48.0" promptText="Cena" />
-      <Text fill="#009fff" layoutX="223.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dania" textAlignment="CENTER">
-         <font>
-            <Font name="System Bold Italic" size="22.0" />
-         </font>
-      </Text>
-      <TextField layoutX="696.0" layoutY="275.0" prefHeight="25.0" prefWidth="48.0" promptText="jedn." />
-   </children>
+    <children>
+        <Text fill="#009fff" layoutX="104.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raporty" textAlignment="CENTER" wrappingWidth="178.13671875">
+            <font>
+                <Font name="System Bold Italic" size="22.0" />
+            </font></Text>
+        <TableView fx:id="mn_tbl_raports" layoutX="51.0" layoutY="60.0" prefHeight="200.0" prefWidth="302.0">
+            <columns>
+                <TableColumn fx:id="mn_column_rap" prefWidth="220.0" style="-fx-color: #009fff;" text="Raport" />
+                <TableColumn fx:id="mn_column_data" prefWidth="81.0" style="-fx-color: #009fff;" text="Data" />
+            </columns>
+        </TableView>
+        <Button layoutX="51.0" layoutY="268.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="186.0" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Wygeneruj raport" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font></Button>
+        <Text fill="#009fff" layoutX="547.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produkty">
+            <font>
+                <Font name="System Bold Italic" size="22.0" />
+            </font>
+        </Text>
+        <TableView fx:id="mn_tbl_products" layoutX="416.0" layoutY="60.0" prefHeight="200.0" prefWidth="345.0">
+            <columns>
+                <TableColumn fx:id="mn_column_product" prefWidth="196.0" style="-fx-color: #009fff;" text="Produkt" />
+                <TableColumn fx:id="mn_column_count" prefWidth="86.0" style="-fx-color: #009fff;" text="Ilość" />
+                <TableColumn prefWidth="75.0" style="-fx-color: #009fff;" text="Jedn." />
+            </columns>
+        </TableView>
+        <Button fx:id="add_prod" layoutX="660.0" layoutY="313.0" mnemonicParsing="false" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Dodaj" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font></Button>
+        <TextField fx:id="add_prod_prod" layoutX="433.0" layoutY="275.0" prefHeight="25.0" prefWidth="142.0" promptText="Produkt" />
+        <TextField fx:id="add_prod_count" layoutX="594.0" layoutY="275.0" prefHeight="25.0" prefWidth="72.0" promptText="Ilość" />
+        <Button layoutX="584.0" layoutY="529.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="41.0" prefWidth="142.0" style="-fx-background-color: red; -fx-background-radius: 60;" text="Wyloguj" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font></Button>
+        <Button layoutX="543.0" layoutY="470.0" mnemonicParsing="false" onAction="#ListOfKelnersButton" prefHeight="41.0" prefWidth="224.0" style="-fx-background-color: green; -fx-background-radius: 60;" text="Zarządzanie kelnerami" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font></Button>
+        <TableView fx:id="mn_tbl_dish" layoutX="51.0" layoutY="353.0" prefHeight="174.0" prefWidth="406.0">
+            <columns>
+                <TableColumn fx:id="mn_column_dish" prefWidth="84.0" style="-fx-color: #009fff;" text="Nazwa" />
+                <TableColumn fx:id="mn_column_prod_dish" prefWidth="271.0" style="-fx-color: #009fff;" text="Produkty" />
+                <TableColumn fx:id="mn_column_price" prefWidth="50.0" style="-fx-color: #009fff;" text="Cena" />
+            </columns>
+        </TableView>
+        <Button fx:id="add_dish" layoutX="467.0" layoutY="542.0" mnemonicParsing="false" style="-fx-background-color: #009fff; -fx-background-radius: 60;" text="Dodaj" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font></Button>
+        <TextField fx:id="add_dish_dish" layoutX="51.0" layoutY="549.0" prefHeight="25.0" prefWidth="80.0" promptText="Nazwa" />
+        <TextField fx:id="add_dish_prod" layoutX="144.0" layoutY="549.0" prefHeight="25.0" prefWidth="255.0" promptText="Produkty" />
+        <TextField fx:id="add_dish_price" layoutX="409.0" layoutY="549.0" prefHeight="25.0" prefWidth="48.0" promptText="Cena" />
+        <Text fill="#009fff" layoutX="223.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dania" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold Italic" size="22.0" />
+            </font>
+        </Text>
+        <TextField layoutX="696.0" layoutY="275.0" prefHeight="25.0" prefWidth="48.0" promptText="jedn." />
+    </children>
 </AnchorPane>

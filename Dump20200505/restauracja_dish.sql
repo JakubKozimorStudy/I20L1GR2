@@ -1,54 +1,145 @@
--- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
---
--- Host: 127.0.0.1    Database: restauracja
--- ------------------------------------------------------
--- Server version	8.0.19
+package com.l1gr2.restaurant.controllers;
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+import com.l1gr2.restaurant.RestaurantApplication;
+import com.l1gr2.restaurant.SceneManager;
+import com.l1gr2.restaurant.entity.Dish;
+import com.l1gr2.restaurant.entity.Inventory;
+import com.l1gr2.restaurant.service.DishService;
+import com.l1gr2.restaurant.service.ProductsService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.stereotype.Controller;
 
---
--- Table structure for table `dish`
---
+import java.util.List;
+/**
+ * author Krzysztof Krupinski
+ * Klasa odpowiedzialna za zwracanie produktów, dań i raportów
+ */
+@Controller
+public class ManagerPanelController {
 
-DROP TABLE IF EXISTS `dish`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `dish` (
-  `dish_id` int NOT NULL AUTO_INCREMENT,
-  `dish_name` varchar(255) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
-  `descripion` varchar(255) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
-  `dish_price` int NOT NULL,
-  `category` varchar(255) CHARACTER SET utf16 COLLATE utf16_polish_ci DEFAULT NULL,
-  PRIMARY KEY (`dish_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf16 COLLATE=utf16_polish_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+    @FXML
+    public TableView <Inventory> mn_tbl_products;
 
---
--- Dumping data for table `dish`
---
+    @FXML
+    public TableColumn<Inventory, String> mn_column_product;
 
-LOCK TABLES `dish` WRITE;
-/*!40000 ALTER TABLE `dish` DISABLE KEYS */;
-INSERT INTO `dish` VALUES (1,'Margherita','Sos pomidorowy łagodny, Ser mozzarella, Oregano',24,'Pizza'),(2,'Funghi','Sos pomidorowy łagodny, Ser mozzarella, Pieczarki, Oregano',25,'Pizza'),(3,'Wegetariana','Sos pomidorowy łagodny, Ser mozzarella, Pieczarki, Oregano, Papryka, Kukurydza',28,'Pizza'),(4,'Capricciosa','Sos pomidorowy łagodny, Ser mozzarella, Pieczarki, Oregano, Papryka, Szynka',27,'Pizza'),(5,'Calzone capri','sos pomidorowy, ser, szynka, pieczarki, cebula, tymianek',21,'Calzone'),(6,'Makaron spaghetti bolognese','Makaron spaghetti z tradycyjnym sosem bolońskim, wołowiną, soczystymi pomidorami, czosnkiem, warzywami, parmezanem.',19,'Makarony'),(7,'Makaron penne z kurczakiem cukinią i brokułami','Makaron penne w lekkim sosie śmietanowym z kawałkami kurczaka, cebuli, cukinii oraz brokuł, doprawiony estragonem i parmezanem.',21,'Makarony'),(8,'Burger classic','200g mięsa wołowego, sałata, rucola, pomidor, ogórek kiszony, czerwona cebula, sos BBQ, majonez',17,'Burgery'),(9,'Lasagna szpinakowa','Płaty włoskiego makaronu przekładane szpinakiem i sosem beszamelowym, zapiekane z mozarellą',17,'Lasagne');
-/*!40000 ALTER TABLE `dish` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+    @FXML
+    public TableColumn<Inventory, String> mn_column_count;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+    @FXML
+    public TableView <Inventory> mn_tbl_raports;
 
--- Dump completed on 2020-05-05 23:37:47
+    @FXML
+    public TableColumn<Inventory, String> mn_column_rap;
+
+    @FXML
+    public TableColumn<Inventory, String> mn_column_data;
+
+    @FXML
+    public TableView <Dish> mn_tbl_dish;
+
+    @FXML
+    public TableColumn<Dish, String> mn_column_dish;
+
+    @FXML
+    public TableColumn<Dish, String> mn_column_prod_dish;
+
+    @FXML
+    public TableColumn<Dish, String> mn_column_price;
+
+    @FXML
+    public TextField add_prod_prod;
+
+    @FXML
+    public TextField add_prod_count;
+
+    @FXML
+    public TextField add_dish_dish;
+
+    @FXML
+    public TextField add_dish_prod;
+
+    @FXML
+    public TextField add_dish_price;
+
+    @FXML
+    public Button add_dish;
+
+    @FXML
+    public Button add_prod;
+
+    private ProductsService productsService;
+    private DishService dishService;
+    ObservableList<Inventory> observableListAllProducts = FXCollections.observableArrayList();
+    ObservableList<Dish> obsevableListAllDishes = FXCollections.observableArrayList();
+
+    public ObservableList<Inventory> getObservableListAllProducts() {
+        List<Inventory> productsList = productsService.getAllProducts();
+        this.observableListAllProducts.addAll(productsList);
+        return this.observableListAllProducts;
+    }
+    /**
+     * metoda odświeża listę produktów po jej edytowaniu( dodaniu lub usunięciu użytkownika)
+     */
+    public void refresh_products_table() {
+        this.observableListAllProducts = FXCollections.observableArrayList();
+        mn_tbl_products.getColumns().clear();
+        mn_tbl_products.setItems(getObservableListAllProducts());
+        mn_tbl_products.getColumns().addAll(mn_column_product, mn_column_count);
+    }
+
+    public ObservableList<Dish> getObservableListAllDishes(){
+        List<Dish> dishList = dishService.getAllDish();
+        this.obsevableListAllDishes.addAll(dishList);
+        return this.obsevableListAllDishes;
+    }
+
+    /**
+     *
+     * @param event, kliknięcie
+     *               metoda odpowiedzialna za wylogowanie użytkownika i przeniesienie go na strone logowania
+     */
+
+    @FXML
+    void logoutButton(ActionEvent event) {
+        SceneManager.renderScene("loginPage");
+    }
+
+    /**
+     *
+     * @param event, kliknięcie
+     *               metoda odpowiedzialna za przeniesienie do panelu listy użytkowników
+     */
+    @FXML
+    void ListOfKelnersButton(ActionEvent event) { SceneManager.renderScene("listOfUsers");}
+
+    @FXML
+    void initialize() {
+        ConfigurableApplicationContext springContext = RestaurantApplication.getSpringContext();
+        dishService = (DishService) springContext.getBean("dishService");
+        productsService = (ProductsService) springContext.getBean("productsServiceImpl");
+
+        mn_column_dish.setCellValueFactory(new PropertyValueFactory<>("dish_name"));
+        mn_column_prod_dish.setCellValueFactory(new PropertyValueFactory<>("descripion"));
+        mn_column_price.setCellValueFactory(new PropertyValueFactory<>("dish_price"));
+        mn_tbl_dish.getColumns().clear();
+        mn_tbl_dish.setItems(getObservableListAllDishes());
+        mn_tbl_dish.getColumns().addAll(mn_column_dish, mn_column_prod_dish,mn_column_price);
+
+        mn_column_product.setCellValueFactory(new PropertyValueFactory<>("product_name"));
+        mn_column_count.setCellValueFactory(new PropertyValueFactory<>("product_quantity"));
+        mn_tbl_products.getColumns().clear();
+        mn_tbl_products.setItems(getObservableListAllProducts());
+        mn_tbl_products.getColumns().addAll(mn_column_product, mn_column_count);
+
+    }
+}
