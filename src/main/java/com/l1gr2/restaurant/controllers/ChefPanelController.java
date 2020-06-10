@@ -77,7 +77,7 @@ public class ChefPanelController {
 
     ObservableList<Orders> observableListAllOrders = FXCollections.observableArrayList();
     ObservableList<Integer> values = FXCollections.observableArrayList(1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
-    ObservableList<String> valuesStatus = FXCollections.observableArrayList("W realizacji", "Gotowe", "Odrzucono");
+    ObservableList<String> valuesStatus = FXCollections.observableArrayList( "Gotowe", "Do realizacji");
 
     public ObservableList<Inventory> getObservableListAllProducts() {
         List<Inventory> productsList = productsService.getAllProducts();
@@ -163,6 +163,7 @@ public class ChefPanelController {
 
         refresh_products_table();
         refresh_dish_table();
+
     }
     /**
      *
@@ -228,6 +229,7 @@ public class ChefPanelController {
         tbl_products.setItems(observableListSearchedProducts);
         tbl_products.getColumns().clear();
         tbl_products.getColumns().addAll(column_product, column_count);
+
     }
 
     @FXML
